@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>P&H NextWave - Pricing</title>
+
+  <!-- Google Fonts Import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* Global Typography */
+    body {
+      background-color: #fff;
+      color: #000;
+      font-family: 'Playfair Display', serif;
+      line-height: 1.6;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* Header & Navigation */
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .brand {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    nav a:hover {
+      color: #888;
+    }
+    
+    /* Optional Hero Section */
+    .hero {
+      background: url("/Users/willhatfield/Desktop/background-image.jpg") no-repeat center center;
+      background-size: cover; 
+      min-height: 40vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 80px 20px;
+    }
+    .hero h1 {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    /* Main Content */
+    main {
+      width: 90%;
+      max-width: 1200px;
+      margin: 40px auto;
+    }
+    .pricing-section {
+      margin-top: 40px;
+      line-height: 1.8;
+    }
+    .pricing-section h2 {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .pricing-plan {
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .pricing-plan h3 {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .pricing-plan p {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+    .pricing-plan ul {
+      margin-left: 20px;
+      list-style-type: disc;
+    }
+    .pricing-plan li {
+      margin-bottom: 0.5em;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #f5f5f7;
+      color: #666;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+    }
+    footer p {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="brand">P&H NextWave</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="inquiry.html">Inquiry</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  
+  <!-- Optional Hero Section -->
+  <section class="hero">
+    <h1>Our Pricing</h1>
+    <p>Choose the plan that suits your business needs and scale with AI-driven innovation.</p>
+  </section>
+  
+  <!-- Main Content -->
+  <main>
+    <section class="pricing-section">
+      <h2>Pricing Plans</h2>
+      <div class="pricing-plan">
+        <h3>Basic Plan</h3>
+        <p>$99/month</p>
+        <ul>
+          <li>AI-powered analytics</li>
+          <li>Basic reporting dashboard</li>
+          <li>Up to 5 user accounts</li>
+        </ul>
+      </div>
+      <div class="pricing-plan">
+        <h3>Standard Plan</h3>
+        <p>$199/month</p>
+        <ul>
+          <li>Advanced AI predictions</li>
+          <li>Customizable dashboards</li>
+          <li>Up to 20 user accounts</li>
+        </ul>
+      </div>
+      <div class="pricing-plan">
+        <h3>Premium Plan</h3>
+        <p>$499/month</p>
+        <ul>
+          <li>Full AI automation suite</li>
+          <li>Priority support &amp; consulting</li>
+          <li>Unlimited user accounts</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 P&H NextWave. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>P&H NextWave - Contact</title>
+
+  <!-- Google Fonts Import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* Global Typography */
+    body {
+      background-color: #fff;
+      color: #000;
+      font-family: 'Playfair Display', serif;
+      line-height: 1.6;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    
+    /* Header & Navigation */
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .brand {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    nav a:hover {
+      color: #888;
+    }
+    
+    /* Optional Hero Section */
+    .hero {
+      background: url("/Users/willhatfield/Desktop/background-image.jpg") no-repeat center center;
+      background-size: cover;
+      min-height: 40vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 80px 20px;
+    }
+    .hero h1 {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    /* Main Content */
+    main {
+      width: 90%;
+      max-width: 1200px;
+      margin: 40px auto;
+    }
+    .contact-section {
+      margin-top: 40px;
+      line-height: 1.8;
+    }
+    .contact-section h2 {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .contact-section p {
+      font-size: 1.1rem;
+      margin-bottom: 1em;
+    }
+    .contact-info {
+      list-style-type: none;
+      font-size: 1.1rem;
+    }
+    .contact-info li {
+      margin-bottom: 0.8em;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #f5f5f7;
+      color: #666;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+    }
+    footer p {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="brand">P&H NextWave</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="inquiry.html">Inquiry</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  
+  <!-- Optional Hero Section -->
+  <section class="hero">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you. Get in touch with us today.</p>
+  </section>
+  
+  <!-- Main Content -->
+  <main>
+    <section class="contact-section">
+      <h2>Our Contact Information</h2>
+      <p>You can reach us via the following methods:</p>
+      <ul class="contact-info">
+        <li><strong>Phone:</strong> (952) 567-0401</li>
+        <li><strong>Email:</strong> <a href="mailto:info@pnhnextwave.com">info@pnhnextwave.com</a></li>
+        <li><strong>Address:</strong> 123 AI Innovations Blvd, Tech City, TX 12345</li>
+      </ul>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 P&H NextWave. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

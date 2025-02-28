@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Metadata about the document -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>P&H NextWave - Home</title>
+
+  <!-- Google Fonts Import:
+       - 'Bodoni Moda' is used for headings.
+       - 'Playfair Display' is used for body text.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Internal CSS Styling -->
+  <style>
+    /* Basic Reset: Remove default margins, paddings, and set box-sizing for all elements */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* Global Typography & Fade-In Animation on page load */
+    body {
+      background-color: #fff; /* White background */
+      color: #000;            /* Black text color */
+      font-family: 'Playfair Display', serif; /* Body text font */
+      line-height: 1.6;       /* Comfortable line spacing */
+      animation: fadeIn 0.4s ease-in-out; /* Fade in effect when page loads */
+    }
+
+    /* Keyframes for the fadeIn animation */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* Fullscreen Intro Section:
+         - Covers the full viewport height (100vh)
+         - Uses flexbox to center content both vertically and horizontally
+         - Has a clickable cursor and a transition for fading out
+    */
+    .intro {
+      background-color: #000;   /* Black background */
+      color: #ffff;             /* White text (Note: #ffff is equivalent to #ffffff) */
+      height: 100vh;            /* Full viewport height */
+      display: flex;            /* Flexbox layout */
+      flex-direction: column;   /* Stack children vertically */
+      align-items: center;      /* Center horizontally */
+      justify-content: center;  /* Center vertically */
+      text-align: center;       /* Center text */
+      padding: 20px;            /* Inner spacing */
+      cursor: pointer;          /* Indicates the section is clickable */
+      transition: opacity 0.3s ease-out; /* Smooth opacity transition when fading out */
+    }
+    /* Styling for the main heading inside the intro */
+    .intro h1 {
+      font-family: 'Bodoni Moda', serif; /* Heading font */
+      font-size: 4rem;                   /* Large text */
+      font-weight: 700;                  /* Bold */
+      margin-bottom: 10px;               /* Spacing below the heading */
+    }
+    /* Styling for the paragraph inside the intro */
+    .intro p {
+      font-size: 1.5rem;  /* Increased font size */
+      font-weight: 400;
+      opacity: 0.8;       /* Slightly faded for a softer look */
+    }
+    /* Class to trigger the fade-out effect */
+    .fade-out {
+      opacity: 0;
+    }
+
+    /* Header & Navigation Styling */
+    header {
+      background-color: #000;  /* Black background for the header */
+      color: #fff;             /* White text */
+      padding: 10px 20px;      /* Internal spacing */
+      display: flex;           /* Flex layout for header content */
+      align-items: center;     /* Center items vertically */
+      justify-content: space-between; /* Space between brand and nav links */
+      position: sticky;        /* Makes header stick to the top on scroll */
+      top: 0;                  /* Position at the very top */
+      z-index: 1000;           /* Ensure header appears above other content */
+    }
+    /* Brand/logo styling inside header */
+    .brand {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    /* Navigation links styling */
+    nav a {
+      color: #fff;              /* White text */
+      text-decoration: none;    /* Remove underline */
+      margin: 0 10px;           /* Spacing between links */
+      font-weight: 600;         /* Semi-bold */
+      font-size: 0.95rem;       /* Slightly smaller text */
+      transition: color 0.2s ease; /* Smooth transition on hover */
+    }
+    /* Change link color on hover */
+    nav a:hover {
+      color: #888;
+    }
+
+    /* Hero Section with Background Image */
+    .hero {
+      background: url("/Users/willhatfield/Desktop/background-image.jpg") no-repeat center center;
+      background-size: cover;   /* Ensure image covers the section */
+      min-height: 60vh;         /* At least 60% of viewport height */
+      display: flex;            /* Flex layout for centering */
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;              /* White text for readability */
+      padding: 100px 20px;      /* Spacing around content */
+    }
+    .hero h1 {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 3rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;         /* Limit width for readability */
+      margin: 0 auto;
+    }
+
+    /* Main Content Container */
+    main {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto 40px; /* Center main content with a bottom margin */
+    }
+
+    /* About Section Styling */
+    .about-section {
+      margin-top: 40px;
+      line-height: 1.8;
+    }
+    .about-section h2 {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .about-section p {
+      margin-bottom: 1.5em;
+      font-size: 1.1rem;
+    }
+
+    /* Services Section Styling */
+    .services-section {
+      margin-top: 40px;
+      line-height: 1.8;
+    }
+    .services-section h2 {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .services-section p {
+      margin-bottom: 1em;
+      font-size: 1.1rem;
+    }
+    .services-section ol {
+      margin-left: 20px;
+      font-size: 1.1rem;
+      margin-bottom: 1.5em;
+    }
+    .services-section ul {
+      margin-left: 20px;
+      margin-bottom: 1em;
+      list-style-type: disc;
+    }
+    .services-section li {
+      margin-bottom: 0.5em;
+    }
+
+    /* Use Cases Section Styling */
+    .use-cases-section {
+      margin-top: 40px;
+      line-height: 1.8;
+    }
+    .use-cases-section h2 {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .use-cases-section p {
+      margin-bottom: 1em;
+      font-size: 1.1rem;
+    }
+    .use-cases-section ol {
+      margin-left: 20px;
+      font-size: 1.1rem;
+      margin-bottom: 1.5em;
+    }
+    .use-cases-section ul {
+      margin-left: 20px;
+      margin-bottom: 1em;
+      list-style-type: disc;
+    }
+    .use-cases-section li {
+      margin-bottom: 0.5em;
+    }
+
+    /* Footer Styling */
+    footer {
+      background-color: #f5f5f7; /* Light grey background */
+      color: #666;             /* Grey text */
+      padding: 30px 20px;
+      font-size: 0.9rem;
+    }
+    footer p {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fullscreen Black Intro Section -->
+  <!-- This section is shown first and covers the full viewport.
+       It is clickable and will fade out upon click to reveal the rest of the site. -->
+  <section class="intro">
+    <h1>The Future of AI is Here</h1>
+    <p>Don't be left behind.</p>
+  </section>
+
+  <!-- Header with Navigation -->
+  <!-- The header is sticky and remains at the top when scrolling -->
+  <header>
+    <div class="brand">P&H NextWave</div>
+    <nav>
+      <a href="intro.html">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="inquiry.html">Inquiry</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  
+  <!-- Hero Section with Background Image -->
+  <section class="hero">
+    <h1>Empowering AI Innovations</h1>
+    <p>
+      Transforming businesses with cutting-edge technology, 
+      data-driven insights, and the limitless potential of artificial intelligence.
+    </p>
+  </section>
+
+  <!-- Main Content Area -->
+  <!-- Contains sections such as About, Services, and Use Cases -->
+  <main>
+    <!-- About Section -->
+    <section class="about-section">
+      <h2>About P&H NextWave</h2>
+      <p>
+        P&H NextWave is a pioneering technology company at the forefront of artificial intelligence, data analytics, and machine learning innovation. Our mission is to empower businesses of all sizes by providing scalable, user-friendly, and cost-effective AI solutions that drive efficiency, enhance decision-making, and fuel growth.
+      </p>
+      <p>
+        With a team of dedicated AI experts, data scientists, and software engineers, we specialize in creating state-of-the-art AI-driven tools and platforms that optimize business operations, unlock valuable insights, and automate complex processes. From predictive analytics to intelligent automation, P&H NextWave enables businesses to harness the full potential of AI, transforming challenges into opportunities.
+      </p>
+    </section>
+
+    <!-- Key Services & Offerings Section -->
+    <section class="services-section">
+      <h2>Key Services &amp; Offerings</h2>
+      <p>
+        P&H NextWave provides a comprehensive suite of AI-powered solutions tailored to meet the diverse needs of businesses across various industries. Our services include:
+      </p>
+      <ol>
+        <li>
+          <strong>AI-Powered Data Analytics</strong>
+          <ul>
+            <li><em>Predictive Analytics:</em> Anticipate trends, customer behavior, and market fluctuations to make data-driven decisions.</li>
+            <li><em>Big Data Processing:</em> Handle massive datasets with ease, extracting actionable insights from structured and unstructured data.</li>
+            <li><em>Real-Time Data Analysis:</em> Monitor and analyze live data streams to improve operations and responsiveness.</li>
+            <li><em>AI-Driven Dashboards:</em> Customizable, intuitive dashboards that provide deep insights at a glance.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Intelligent Process Automation (IPA)</strong>
+          <ul>
+            <li><em>Robotic Process Automation (RPA):</em> Automate repetitive tasks, freeing up valuable human resources for higher-level work.</li>
+            <li><em>Workflow Optimization:</em> Improve operational efficiency by streamlining and automating key business processes.</li>
+            <li><em>AI-Powered Chatbots:</em> Enhance customer service and engagement with AI-driven virtual assistants.</li>
+            <li><em>Smart Document Processing:</em> Automate data extraction, document classification, and analysis with natural language processing (NLP).</li>
+          </ul>
+        </li>
+        <li>
+          <strong>AI-Driven Product Development</strong>
+          <ul>
+            <li><em>Custom Machine Learning Models:</em> Build AI models tailored to specific industry challenges.</li>
+            <li><em>Recommendation Systems:</em> Enhance user engagement and sales with personalized recommendations.</li>
+            <li><em>Computer Vision Solutions:</em> Utilize AI for image recognition, object detection, and automated quality control.</li>
+            <li><em>Natural Language Processing (NLP):</em> Enable AI-driven text analysis, sentiment analysis, and automated content generation.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Industry-Specific AI Solutions</strong>
+          <p>
+            We provide industry-focused AI innovations designed to solve unique challenges across various sectors:
+          </p>
+          <ul>
+            <li>Healthcare: AI-powered diagnostics, predictive analytics for patient care, and workflow automation.</li>
+            <li>Finance: Fraud detection, risk assessment, and AI-driven trading algorithms.</li>
+            <li>Retail &amp; E-Commerce: Personalized recommendations, demand forecasting, and customer sentiment analysis.</li>
+            <li>Manufacturing: Predictive maintenance, supply chain optimization, and AI-powered quality control.</li>
+            <li>Logistics &amp; Transportation: Route optimization, automated scheduling, and AI-powered demand forecasting.</li>
+            <li>Marketing &amp; Customer Engagement: AI-driven ad targeting, chatbots, and customer sentiment analysis.</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Example Use Cases Section -->
+    <section class="use-cases-section">
+      <h2>Example Use Cases</h2>
+      <p>
+        To illustrate the impact of P&H NextWave’s AI solutions, here are real-world applications across different industries:
+      </p>
+      <ol>
+        <li>
+          <strong>Retail &amp; E-Commerce: Personalized Customer Experiences</strong>
+          <p><strong>Problem:</strong> A large online retailer struggled with high cart abandonment rates and low customer engagement.</p>
+          <p><strong>Solution:</strong> Implemented an AI-powered recommendation system and dynamic pricing algorithm, leading to:</p>
+          <ul>
+            <li>30% increase in conversion rates</li>
+            <li>Improved customer retention through personalized promotions</li>
+            <li>Optimized pricing strategies based on real-time demand</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Healthcare: Predictive Patient Care</strong>
+          <p><strong>Problem:</strong> A hospital system wanted to improve patient outcomes and reduce emergency readmissions.</p>
+          <p><strong>Solution:</strong> Deployed an AI-driven predictive analytics model that analyzed patient history and symptoms to:</p>
+          <ul>
+            <li>Identify high-risk patients before deterioration</li>
+            <li>Enable proactive interventions, reducing readmissions by 25%</li>
+            <li>Enhance diagnostic accuracy through AI-assisted decision-making</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Manufacturing: Predictive Maintenance for Equipment</strong>
+          <p><strong>Problem:</strong> A manufacturing plant faced frequent unexpected machinery breakdowns, leading to costly downtime.</p>
+          <p><strong>Solution:</strong> AI-powered predictive maintenance identified potential failures before they occurred, resulting in:</p>
+          <ul>
+            <li>40% reduction in unplanned downtime</li>
+            <li>Increased operational efficiency and cost savings</li>
+            <li>Extended equipment lifespan through data-driven maintenance schedules</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Finance: AI-Powered Fraud Detection</strong>
+          <p><strong>Problem:</strong> A financial institution needed a better way to detect fraudulent transactions in real time.</p>
+          <p><strong>Solution:</strong> Implemented a machine learning model that analyzed transaction patterns, leading to:</p>
+          <ul>
+            <li>60% improvement in fraud detection accuracy</li>
+            <li>Faster response times for suspicious activity alerts</li>
+            <li>Reduced false positives, improving customer experience</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <!-- Contains copyright and additional footer details -->
+  <footer>
+    <p>&copy; 2025 P&H NextWave. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JavaScript for the Intro Fade-Out Effect -->
+  <script>
+    // Wait for the document to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Select the intro section element
+      const intro = document.querySelector('.intro');
+      // Add a click event listener on the intro section
+      intro.addEventListener('click', function() {
+        // Add the 'fade-out' class, which transitions the opacity to 0
+        intro.classList.add('fade-out');
+        // After the CSS transition (500ms), set display to 'none' to remove the element
+        setTimeout(function() {
+          intro.style.display = 'none';
+        }, 400); // Timeout duration should match the CSS transition duration
+      });
+    });
+  </script>
+</body>
+</html>
