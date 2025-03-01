@@ -980,6 +980,12 @@
         document.getElementById('initial-fade-in').classList.add('hidden');
       }, 3000); // Adjust the duration as needed
     });
+
+    // Hide initial fade-in screen on click
+    document.getElementById('initial-fade-in').addEventListener('click', function() {
+      this.classList.add('hidden');
+        });
+        
   </script>
 </body>
 </html>
