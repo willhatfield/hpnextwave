@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -13,7 +13,7 @@
     "Playfair Display" will be used for body text
   -->
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="assets/logo(2).png" type="image/x-icon">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 
   <style>
     /* Basic Reset */
@@ -195,7 +195,81 @@
     .use-cases-section li {
       margin-bottom: 0.5em;
     }
-  
+
+    /* Team Section */
+    .team-section {
+      margin-top: 40px;
+      line-height: 1.8;
+      text-align: center;
+    }
+    .team-section h2 {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .team-section .team-member {
+      display: inline-block;
+      width: 200px;
+      margin: 20px;
+      text-align: center;
+    }
+    .team-section .team-member img {
+      width: 100%;
+      border-radius: 50%;
+    }
+    .team-section .team-member h3 {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+    .team-section .team-member p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      margin-top: 40px;
+      line-height: 1.8;
+      text-align: center;
+    }
+    .contact-section h2 {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .contact-section form {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .contact-section form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .contact-section form input,
+    .contact-section form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .contact-section form button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #1a1a1a;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .contact-section form button:hover {
+      background-color: #333;
+    }
+
     /* Footer */
     footer {
       background-color: #1a1a1a; /* Dark grey footer */
@@ -228,7 +302,7 @@
   <!-- Header -->
   <header>
     <div class="brand">
-      <img src="assets/logo(2).png" alt="P&H NextWave Logo" class="logo">
+      <img src="assets/logo.png" alt="P&H NextWave Logo" class="logo">
     </div>
     <nav>
       <a href="index.html">Home</a>
@@ -359,6 +433,531 @@
           </ul>
         </li>
       </ol>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+      <h2>Meet Our Team</h2>
+      <div class="team-member">
+        <img src="assets/team-member1.jpg" alt="Team Member 1"> <!-- Image of Team Member 1 -->
+        <h3>John Doe</h3>
+        <p>CEO & Founder</p>
+      </div>
+      <div class="team-member">
+        <img src="assets/team-member2.jpg" alt="Team Member 2"> <!-- Image of Team Member 2 -->
+        <h3>Jane Smith</h3>
+        <p>Chief Technology Officer</p>
+      </div>
+      <div class="team-member">
+        <img src="assets/team-member3.jpg" alt="Team Member 3"> <!-- Image of Team Member 3 -->
+        <h3>Emily Johnson</h3>
+        <p>Lead Data Scientist</p>
+      </div>
+      <div class="team-member">
+        <img src="assets/team-member4.jpg" alt="Team Member 4"> <!-- Image of Team Member 4 -->
+        <h3>Michael Brown</h3>
+        <p>Head of AI Development</p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <h2>Contact Us</h2>
+      <form action="submit_form.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 P&H NextWave. All Rights Reserved.</p>
+    <p>Contact<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>P&H NextWave - Home</title>
+
+  <!-- Google Fonts Import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- 
+    "Bodoni Moda" will be used for headings (header, hero title)
+    "Playfair Display" will be used for body text
+  -->
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* Global Typography */
+    body {
+      background-color: #f4f4f9; /* Light grey background for a professional look */
+      color: #333; /* Dark grey text for better readability */
+      font-family: 'Playfair Display', serif;
+      line-height: 1.6;
+      opacity: 0; /* Start with opacity 0 */
+      transition: opacity 0.4s ease-in-out; /* Smooth transition */
+    }
+
+    body.fade-in {
+      opacity: 1; /* Fade to opacity 1 */
+    }
+
+    /* Initial Fade-In Screen */
+    #initial-fade-in {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bodoni Moda', serif;
+      font-size: 2rem;
+      text-align: center;
+      z-index: 10000;
+      opacity: 1;
+      transition: opacity 1s ease-in-out;
+    }
+
+    #initial-fade-in.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Header & Navigation */
+    header {
+      background-color: #1a1a1a;  /* Dark grey header bar */
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .brand .logo {
+      height: 40px; /* Adjust the logo size */
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    nav a:hover {
+      color: #888;
+    }
+
+    .hero {
+      background-image: url('assets/hero-image.png'); /* Add a professional background image */
+      background-size: cover;
+      background-position: center;
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 3rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+  
+    /* Main Content */
+    main {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto 40px;
+    }
+  
+    /* About Section */
+    .about-section {
+      margin-top: 40px;
+      line-height: 1.8;
+    }
+    .about-section h2 {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .about-section p {
+      margin-bottom: 1.5em;
+      font-size: 1.1rem;
+    }
+  
+    /* Services Section */
+    .services-section {
+      margin-top: 40px;
+      line-height: 1.8;
+    }
+    .services-section h2 {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .services-section p {
+      margin-bottom: 1em;
+      font-size: 1.1rem;
+    }
+    .services-section ol {
+      margin-left: 20px;
+      font-size: 1.1rem;
+      margin-bottom: 1.5em;
+    }
+    .services-section ul {
+      margin-left: 20px;
+      margin-bottom: 1em;
+      list-style-type: disc;
+    }
+    .services-section li {
+      margin-bottom: 0.5em;
+    }
+  
+    /* Use Cases Section */
+    .use-cases-section {
+      margin-top: 40px;
+      line-height: 1.8;
+    }
+    .use-cases-section h2 {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .use-cases-section p {
+      margin-bottom: 1em;
+      font-size: 1.1rem;
+    }
+    .use-cases-section ol {
+      margin-left: 20px;
+      font-size: 1.1rem;
+      margin-bottom: 1.5em;
+    }
+    .use-cases-section ul {
+      margin-left: 20px;
+      margin-bottom: 1em;
+      list-style-type: disc;
+    }
+    .use-cases-section li {
+      margin-bottom: 0.5em;
+    }
+
+    /* Team Section */
+    .team-section {
+      margin-top: 40px;
+      line-height: 1.8;
+      text-align: center;
+    }
+    .team-section h2 {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .team-section .team-member {
+      display: inline-block;
+      width: 200px;
+      margin: 20px;
+      text-align: center;
+    }
+    .team-section .team-member img {
+      width: 100%;
+      border-radius: 50%;
+    }
+    .team-section .team-member h3 {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+    .team-section .team-member p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      margin-top: 40px;
+      line-height: 1.8;
+      text-align: center;
+    }
+    .contact-section h2 {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .contact-section form {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .contact-section form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .contact-section form input,
+    .contact-section form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .contact-section form button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #1a1a1a;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .contact-section form button:hover {
+      background-color: #333;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1a1a1a; /* Dark grey footer */
+      color: #ccc;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    footer p {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Initial Fade-In Screen -->
+  <div id="initial-fade-in">
+    <p>The future of AI is Here:</p>
+    <p>Don't get left behind.</p>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="brand">
+      <img src="assets/logo.png" alt="P&H NextWave Logo" class="logo">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="inquiry.html">Inquiry</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Empowering AI Innovations</h1>
+    <p>
+      Transforming businesses with cutting-edge technology, 
+      data-driven insights, and the limitless potential of artificial intelligence.
+    </p>
+  </section>
+  
+  <!-- Main Content -->
+  <main>
+    <!-- About Section -->
+    <section class="about-section">
+      <h2>About P&H NextWave</h2>
+      <p>
+        P&H NextWave is a pioneering technology company at the forefront of artificial intelligence, data analytics, and machine learning innovation. Our mission is to empower businesses of all sizes by providing scalable, user-friendly, and cost-effective AI solutions that drive efficiency, enhance decision-making, and fuel growth.
+      </p>
+      <p>
+        With a team of dedicated AI experts, data scientists, and software engineers, we specialize in creating state-of-the-art AI-driven tools and platforms that optimize business operations, unlock valuable insights, and automate complex processes. From predictive analytics to intelligent automation, P&H NextWave enables businesses to harness the full potential of AI, transforming challenges into opportunities.
+      </p>
+    </section>
+  
+    <!-- Key Services & Offerings Section -->
+    <section class="services-section">
+      <h2>Key Services &amp; Offerings</h2>
+      <p>
+        P&H NextWave provides a comprehensive suite of AI-powered solutions tailored to meet the diverse needs of businesses across various industries. Our services include:
+      </p>
+      <ol>
+        <li>
+          <strong>AI-Powered Data Analytics</strong>
+          <ul>
+            <li><em>Predictive Analytics:</em> Anticipate trends, customer behavior, and market fluctuations to make data-driven decisions.</li>
+            <li><em>Big Data Processing:</em> Handle massive datasets with ease, extracting actionable insights from structured and unstructured data.</li>
+            <li><em>Real-Time Data Analysis:</em> Monitor and analyze live data streams to improve operations and responsiveness.</li>
+            <li><em>AI-Driven Dashboards:</em> Customizable, intuitive dashboards that provide deep insights at a glance.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Intelligent Process Automation (IPA)</strong>
+          <ul>
+            <li><em>Robotic Process Automation (RPA):</em> Automate repetitive tasks, freeing up valuable human resources for higher-level work.</li>
+            <li><em>Workflow Optimization:</em> Improve operational efficiency by streamlining and automating key business processes.</li>
+            <li><em>AI-Powered Chatbots:</em> Enhance customer service and engagement with AI-driven virtual assistants.</li>
+            <li><em>Smart Document Processing:</em> Automate data extraction, document classification, and analysis with natural language processing (NLP).</li>
+          </ul>
+        </li>
+        <li>
+          <strong>AI-Driven Product Development</strong>
+          <ul>
+            <li><em>Custom Machine Learning Models:</em> Build AI models tailored to specific industry challenges.</li>
+            <li><em>Recommendation Systems:</em> Enhance user engagement and sales with personalized recommendations.</li>
+            <li><em>Computer Vision Solutions:</em> Utilize AI for image recognition, object detection, and automated quality control.</li>
+            <li><em>Natural Language Processing (NLP):</em> Enable AI-driven text analysis, sentiment analysis, and automated content generation.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Industry-Specific AI Solutions</strong>
+          <p>
+            We provide industry-focused AI innovations designed to solve unique challenges across various sectors:
+          </p>
+          <ul>
+            <li>Healthcare: AI-powered diagnostics, predictive analytics for patient care, and workflow automation.</li>
+            <li>Finance: Fraud detection, risk assessment, and AI-driven trading algorithms.</li>
+            <li>Retail &amp; E-Commerce: Personalized recommendations, demand forecasting, and customer sentiment analysis.</li>
+            <li>Manufacturing: Predictive maintenance, supply chain optimization, and AI-powered quality control.</li>
+            <li>Logistics &amp; Transportation: Route optimization, automated scheduling, and AI-powered demand forecasting.</li>
+            <li>Marketing &amp; Customer Engagement: AI-driven ad targeting, chatbots, and customer sentiment analysis.</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+  
+    <!-- Example Use Cases Section -->
+    <section class="use-cases-section">
+      <h2>Example Use Cases</h2>
+      <p>
+        To illustrate the impact of P&H NextWave’s AI solutions, here are real-world applications across different industries:
+      </p>
+      <ol>
+        <li>
+          <strong>Retail &amp; E-Commerce: Personalized Customer Experiences</strong>
+          <p><strong>Problem:</strong> A large online retailer struggled with high cart abandonment rates and low customer engagement.</p>
+          <p><strong>Solution:</strong> Implemented an AI-powered recommendation system and dynamic pricing algorithm, leading to:</p>
+          <ul>
+            <li>30% increase in conversion rates</li>
+            <li>Improved customer retention through personalized promotions</li>
+            <li>Optimized pricing strategies based on real-time demand</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Healthcare: Predictive Patient Care</strong>
+          <p><strong>Problem:</strong> A hospital system wanted to improve patient outcomes and reduce emergency readmissions.</p>
+          <p><strong>Solution:</strong> Deployed an AI-driven predictive analytics model that analyzed patient history and symptoms to:</p>
+          <ul>
+            <li>Identify high-risk patients before deterioration</li>
+            <li>Enable proactive interventions, reducing readmissions by 25%</li>
+            <li>Enhance diagnostic accuracy through AI-assisted decision-making</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Manufacturing: Predictive Maintenance for Equipment</strong>
+          <p><strong>Problem:</strong> A manufacturing plant faced frequent unexpected machinery breakdowns, leading to costly downtime.</p>
+          <p><strong>Solution:</strong> AI-powered predictive maintenance identified potential failures before they occurred, resulting in:</p>
+          <ul>
+            <li>40% reduction in unplanned downtime</li>
+            <li>Increased operational efficiency and cost savings</li>
+            <li>Extended equipment lifespan through data-driven maintenance schedules</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Finance: AI-Powered Fraud Detection</strong>
+          <p><strong>Problem:</strong> A financial institution needed a better way to detect fraudulent transactions in real time.</p>
+          <p><strong>Solution:</strong> Implemented a machine learning model that analyzed transaction patterns, leading to:</p>
+          <ul>
+            <li>60% improvement in fraud detection accuracy</li>
+            <li>Faster response times for suspicious activity alerts</li>
+            <li>Reduced false positives, improving customer experience</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+      <h2>Meet Our Team</h2>
+      <div class="team-member">
+        <img src="assets/team-member1.jpg" alt="Team Member 1"> <!-- Image of Team Member 1 -->
+        <h3>John Doe</h3>
+        <p>CEO & Founder</p>
+      </div>
+      <div class="team-member">
+        <img src="assets/team-member2.jpg" alt="Team Member 2"> <!-- Image of Team Member 2 -->
+        <h3>Jane Smith</h3>
+        <p>Chief Technology Officer</p>
+      </div>
+      <div class="team-member">
+        <img src="assets/team-member3.jpg" alt="Team Member 3"> <!-- Image of Team Member 3 -->
+        <h3>Emily Johnson</h3>
+        <p>Lead Data Scientist</p>
+      </div>
+      <div class="team-member">
+        <img src="assets/team-member4.jpg" alt="Team Member 4"> <!-- Image of Team Member 4 -->
+        <h3>Michael Brown</h3>
+        <p>Head of AI Development</p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <h2>Contact Us</h2>
+      <form action="submit_form.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        
+        <button type="submit">Send Message</button>
+      </form>
     </section>
   </main>
   
