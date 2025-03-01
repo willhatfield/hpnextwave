@@ -13,7 +13,7 @@
     "Playfair Display" will be used for body text
   -->
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/logo(2).png" type="image/x-icon">
 
   <style>
     /* Basic Reset */
@@ -36,7 +36,33 @@
     body.fade-in {
       opacity: 1; /* Fade to opacity 1 */
     }
-  
+
+    /* Initial Fade-In Screen */
+    #initial-fade-in {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bodoni Moda', serif;
+      font-size: 2rem;
+      text-align: center;
+      z-index: 10000;
+      opacity: 1;
+      transition: opacity 1s ease-in-out;
+    }
+
+    #initial-fade-in.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
     /* Header & Navigation */
     header {
       background-color: #1a1a1a;  /* Dark grey header bar */
@@ -193,10 +219,16 @@
 </head>
 <body>
   
+  <!-- Initial Fade-In Screen -->
+  <div id="initial-fade-in">
+    <p>The future of AI is Here:</p>
+    <p>Don't get left behind.</p>
+  </div>
+
   <!-- Header -->
   <header>
     <div class="brand">
-      <img src="assets/logo.png" alt="P&H NextWave Logo" class="logo">
+      <img src="assets/logo(2).png" alt="P&H NextWave Logo" class="logo">
     </div>
     <nav>
       <a href="index.html">Home</a>
@@ -345,6 +377,9 @@
     // Add fade-in class to body after page load
     window.addEventListener('load', function() {
       document.body.classList.add('fade-in');
+      setTimeout(function() {
+        document.getElementById('initial-fade-in').classList.add('hidden');
+      }, 3000); // Adjust the duration as needed
     });
   </script>
 </body>
