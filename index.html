@@ -1,112 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Metadata about the document -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>P&H NextWave - Home</title>
 
-  <!-- Google Fonts Import:
-       - 'Bodoni Moda' is used for headings.
-       - 'Playfair Display' is used for body text.
-  -->
+  <!-- Google Fonts Import -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- 
+    "Bodoni Moda" will be used for headings (header, hero title)
+    "Playfair Display" will be used for body text
+  -->
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 
-  <!-- Internal CSS Styling -->
   <style>
-    /* Basic Reset: Remove default margins, paddings, and set box-sizing for all elements */
+    /* Basic Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
     
-    /* Global Typography & Fade-In Animation on page load */
+    /* Global Typography */
     body {
-      background-color: #fff; /* White background */
-      color: #000;            /* Black text color */
-      font-family: 'Playfair Display', serif; /* Body text font */
-      line-height: 1.6;       /* Comfortable line spacing */
-      animation: fadeIn 0.4s ease-in-out; /* Fade in effect when page loads */
+      background-color: #f4f4f9; /* Light grey background for a professional look */
+      color: #333; /* Dark grey text for better readability */
+      font-family: 'Playfair Display', serif;
+      line-height: 1.6;
+      animation: fadeIn 0.4s ease-in-out;
     }
-
-    /* Keyframes for the fadeIn animation */
+  
     @keyframes fadeIn {
       from { opacity: 0; }
       to   { opacity: 1; }
     }
-
-    /* Fullscreen Intro Section:
-         - Covers the full viewport height (100vh)
-         - Uses flexbox to center content both vertically and horizontally
-         - Has a clickable cursor and a transition for fading out
-    */
-    .intro {
-      background-color: #000;   /* Black background */
-      color: #ffff;             /* White text (Note: #ffff is equivalent to #ffffff) */
-      height: 100vh;            /* Full viewport height */
-      display: flex;            /* Flexbox layout */
-      flex-direction: column;   /* Stack children vertically */
-      align-items: center;      /* Center horizontally */
-      justify-content: center;  /* Center vertically */
-      text-align: center;       /* Center text */
-      padding: 20px;            /* Inner spacing */
-      cursor: pointer;          /* Indicates the section is clickable */
-      transition: opacity 0.3s ease-out; /* Smooth opacity transition when fading out */
-    }
-    /* Styling for the main heading inside the intro */
-    .intro h1 {
-      font-family: 'Bodoni Moda', serif; /* Heading font */
-      font-size: 4rem;                   /* Large text */
-      font-weight: 700;                  /* Bold */
-      margin-bottom: 10px;               /* Spacing below the heading */
-    }
-    /* Styling for the paragraph inside the intro */
-    .intro p {
-      font-size: 1.5rem;  /* Increased font size */
-      font-weight: 400;
-      opacity: 0.8;       /* Slightly faded for a softer look */
-    }
-    /* Class to trigger the fade-out effect */
-    .fade-out {
-      opacity: 0;
-    }
-
-    /* Header & Navigation Styling */
+  
+    /* Header & Navigation */
     header {
-      background-color: #000;  /* Black background for the header */
-      color: #fff;             /* White text */
-      padding: 10px 20px;      /* Internal spacing */
-      display: flex;           /* Flex layout for header content */
-      align-items: center;     /* Center items vertically */
-      justify-content: space-between; /* Space between brand and nav links */
-      position: sticky;        /* Makes header stick to the top on scroll */
-      top: 0;                  /* Position at the very top */
-      z-index: 1000;           /* Ensure header appears above other content */
+      background-color: #1a1a1a;  /* Dark grey header bar */
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    /* Brand/logo styling inside header */
-    .brand {
-      font-family: 'Bodoni Moda', serif;
-      font-size: 1.5rem;
-      font-weight: 700;
+
+    .brand .logo {
+      height: 40px; /* Adjust the logo size */
     }
-    /* Navigation links styling */
+
     nav a {
-      color: #fff;              /* White text */
-      text-decoration: none;    /* Remove underline */
-      margin: 0 10px;           /* Spacing between links */
-      font-weight: 600;         /* Semi-bold */
-      font-size: 0.95rem;       /* Slightly smaller text */
-      transition: color 0.2s ease; /* Smooth transition on hover */
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
     }
-    /* Change link color on hover */
     nav a:hover {
       color: #888;
     }
 
-   
+    .hero {
+      background-image: url('assets/hero-image.jpg'); /* Add a professional background image */
+      background-size: cover;
+      background-position: center;
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 100px 20px;
+    }
+
     .hero h1 {
       font-family: 'Bodoni Moda', serif;
       font-size: 3rem;
@@ -115,18 +88,18 @@
     }
     .hero p {
       font-size: 1.2rem;
-      max-width: 700px;         /* Limit width for readability */
+      max-width: 700px;
       margin: 0 auto;
     }
-
-    /* Main Content Container */
+  
+    /* Main Content */
     main {
       width: 90%;
       max-width: 1200px;
-      margin: 0 auto 40px; /* Center main content with a bottom margin */
+      margin: 0 auto 40px;
     }
-
-    /* About Section Styling */
+  
+    /* About Section */
     .about-section {
       margin-top: 40px;
       line-height: 1.8;
@@ -140,8 +113,8 @@
       margin-bottom: 1.5em;
       font-size: 1.1rem;
     }
-
-    /* Services Section Styling */
+  
+    /* Services Section */
     .services-section {
       margin-top: 40px;
       line-height: 1.8;
@@ -168,8 +141,8 @@
     .services-section li {
       margin-bottom: 0.5em;
     }
-
-    /* Use Cases Section Styling */
+  
+    /* Use Cases Section */
     .use-cases-section {
       margin-top: 40px;
       line-height: 1.8;
@@ -196,13 +169,21 @@
     .use-cases-section li {
       margin-bottom: 0.5em;
     }
-
-    /* Footer Styling */
+  
+    /* Footer */
     footer {
-      background-color: #f5f5f7; /* Light grey background */
-      color: #666;             /* Grey text */
+      background-color: #1a1a1a; /* Dark grey footer */
+      color: #ccc;
       padding: 30px 20px;
       font-size: 0.9rem;
+      text-align: center;
+    }
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
     }
     footer p {
       max-width: 1200px;
@@ -211,28 +192,21 @@
   </style>
 </head>
 <body>
-
-  <!-- Fullscreen Black Intro Section -->
-  <!-- This section is shown first and covers the full viewport.
-       It is clickable and will fade out upon click to reveal the rest of the site. -->
-  <section class="intro">
-    <h1>The Future of AI is Here</h1>
-    <p>Don't be left behind.</p>
-  </section>
-
-  <!-- Header with Navigation -->
-  <!-- The header is sticky and remains at the top when scrolling -->
+  
+  <!-- Header -->
   <header>
-    <div class="brand">P&H NextWave</div>
+    <div class="brand">
+      <img src="assets/logo.png" alt="P&H NextWave Logo" class="logo">
+    </div>
     <nav>
-      <a href="intro.html">Home</a>
+      <a href="index.html">Home</a>
       <a href="pricing.html">Pricing</a>
       <a href="inquiry.html">Inquiry</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
   
-  <!-- Hero Section with Background Image -->
+  <!-- Hero Section -->
   <section class="hero">
     <h1>Empowering AI Innovations</h1>
     <p>
@@ -240,9 +214,8 @@
       data-driven insights, and the limitless potential of artificial intelligence.
     </p>
   </section>
-
-  <!-- Main Content Area -->
-  <!-- Contains sections such as About, Services, and Use Cases -->
+  
+  <!-- Main Content -->
   <main>
     <!-- About Section -->
     <section class="about-section">
@@ -254,7 +227,7 @@
         With a team of dedicated AI experts, data scientists, and software engineers, we specialize in creating state-of-the-art AI-driven tools and platforms that optimize business operations, unlock valuable insights, and automate complex processes. From predictive analytics to intelligent automation, P&H NextWave enables businesses to harness the full potential of AI, transforming challenges into opportunities.
       </p>
     </section>
-
+  
     <!-- Key Services & Offerings Section -->
     <section class="services-section">
       <h2>Key Services &amp; Offerings</h2>
@@ -305,7 +278,7 @@
         </li>
       </ol>
     </section>
-
+  
     <!-- Example Use Cases Section -->
     <section class="use-cases-section">
       <h2>Example Use Cases</h2>
@@ -356,29 +329,17 @@
       </ol>
     </section>
   </main>
-
-  <!-- Footer Section -->
-  <!-- Contains copyright and additional footer details -->
+  
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 P&H NextWave. All Rights Reserved.</p>
+    <p>Contact us: <a href="mailto:info@phnextwave.com">info@phnextwave.com</a></p>
+    <p>Follow us on:
+      <a href="https://twitter.com/phnextwave" target="_blank">Twitter</a> |
+      <a href="https://linkedin.com/company/phnextwave" target="_blank">LinkedIn</a>
+    </p>
+    <p><a href="privacy.html">Privacy Policy</a></p>
   </footer>
-
-  <!-- JavaScript for the Intro Fade-Out Effect -->
-  <script>
-    // Wait for the document to be fully loaded
-    document.addEventListener('DOMContentLoaded', function() {
-      // Select the intro section element
-      const intro = document.querySelector('.intro');
-      // Add a click event listener on the intro section
-      intro.addEventListener('click', function() {
-        // Add the 'fade-out' class, which transitions the opacity to 0
-        intro.classList.add('fade-out');
-        // After the CSS transition (500ms), set display to 'none' to remove the element
-        setTimeout(function() {
-          intro.style.display = 'none';
-        }, 400); // Timeout duration should match the CSS transition duration
-      });
-    });
-  </script>
+  
 </body>
 </html>
