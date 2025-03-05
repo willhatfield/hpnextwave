@@ -29,11 +29,7 @@
       color: #333; /* Dark grey text */
       font-family: 'Playfair Display', serif;
       line-height: 1.6;
-      opacity: 0; /* Start hidden for fade-in effect */
-      transition: opacity 0.4s ease-in-out;
-    }
-    body.fade-in {
-      opacity: 1;
+      overflow: hidden; /* Prevent scrolling during transition */
     }
     
     /* Initial Fade-In Screen */
@@ -61,22 +57,22 @@
       pointer-events: none;
     }
 
-    /* Circle Transition */
+    /* Circular Wipe Transition */
     .circle-transition {
       position: fixed;
       top: 50%;
       left: 50%;
-      width: 0;
-      height: 0;
+      width: 200%;
+      height: 200%;
       background-color: #000;
       border-radius: 50%;
       transform: translate(-50%, -50%);
-      transition: width 1s ease-in-out, height 1s ease-in-out;
+      clip-path: circle(0% at 50% 50%);
+      transition: clip-path 2s ease-in-out;
       z-index: 9999;
     }
     .circle-transition.expand {
-      width: 200%;
-      height: 200%;
+      clip-path: circle(100% at 50% 50%);
     }
 
     /* iframe */
@@ -98,14 +94,14 @@
     <p>Don't Get Left Behind.</p>
   </div>
 
-  <!-- Circle Transition -->
+  <!-- Circular Wipe Transition -->
   <div class="circle-transition" id="circle-transition"></div>
 
   <!-- iframe to load homepage.html -->
   <iframe id="homepage-iframe" src="homepage.html"></iframe>
 
   <script>
-    // Function to hide the initial fade-in screen and show the circle transition
+    // Function to hide the initial fade-in screen and show the circular wipe transition
     function hideInitialFadeIn() {
       var fadeElem = document.getElementById('initial-fade-in');
       var circleTransition = document.getElementById('circle-transition');
