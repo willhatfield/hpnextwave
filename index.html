@@ -8,10 +8,6 @@
   <!-- Google Fonts Import -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- 
-    "Bodoni Moda" will be used for headings (header, hero title, section titles)
-    "Playfair Display" will be used for body text
-  -->
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 
@@ -23,10 +19,9 @@
       box-sizing: border-box;
     }
     
-    /* Global Typography & Body Settings */
     body {
       background-color: #f4f4f9; /* Light grey background */
-      color: #333; /* Dark grey text */
+      color: #333;
       font-family: 'Playfair Display', serif;
       line-height: 1.6;
       overflow: hidden; /* Prevent scrolling during transition */
@@ -50,11 +45,6 @@
       text-align: center;
       z-index: 10000;
       opacity: 1;
-      transition: opacity 1s ease-in-out;
-    }
-    #initial-fade-in.hidden {
-      opacity: 0;
-      pointer-events: none;
     }
 
     /* Circular Wipe Transition */
@@ -62,17 +52,16 @@
       position: fixed;
       top: 50%;
       left: 50%;
-      width: 200%;
-      height: 200%;
+      width: 200vw;
+      height: 200vw;
       background-color: #000;
       border-radius: 50%;
-      transform: translate(-50%, -50%);
-      clip-path: circle(0% at 50% 50%);
-      transition: clip-path 2s ease-in-out;
+      transform: translate(-50%, -50%) scale(1);
+      transition: transform 1.5s ease-in-out;
       z-index: 9999;
     }
     .circle-transition.expand {
-      clip-path: circle(100% at 50% 50%);
+      transform: translate(-50%, -50%) scale(0);
     }
 
     /* iframe */
@@ -101,30 +90,32 @@
   <iframe id="homepage-iframe" src="homepage.html"></iframe>
 
   <script>
-    // Function to hide the initial fade-in screen and show the circular wipe transition
     function hideInitialFadeIn() {
       var fadeElem = document.getElementById('initial-fade-in');
       var circleTransition = document.getElementById('circle-transition');
       var iframe = document.getElementById('homepage-iframe');
 
-      fadeElem.classList.add('hidden');
-      fadeElem.addEventListener('transitionend', function() {
+      // Start transition
+      circleTransition.classList.add('expand');
+
+      // Delay to ensure smooth transition before showing iframe
+      setTimeout(() => {
+        iframe.classList.add('visible');
+      }, 1000);
+
+      // Ensure elements are hidden after transition completes
+      circleTransition.addEventListener('transitionend', function() {
         fadeElem.style.display = 'none';
-        circleTransition.classList.add('expand');
-        circleTransition.addEventListener('transitionend', function() {
-          iframe.classList.add('visible');
-          circleTransition.style.display = 'none';
-        });
-      });
+        circleTransition.style.display = 'none';
+      }, { once: true }); // Remove event listener after it fires once
     }
     
-    // On window load, add fade-in class to body and auto-hide the initial screen after 3 seconds
+    // On window load, auto-hide the initial screen after 3 seconds
     window.addEventListener('load', function() {
-      document.body.classList.add('fade-in');
       setTimeout(hideInitialFadeIn, 3000);
     });
-    
-    // Hide the initial screen immediately when it's clicked
+
+    // Hide immediately when clicked
     document.getElementById('initial-fade-in').addEventListener('click', hideInitialFadeIn);
   </script>
 </body>
