@@ -28,11 +28,11 @@
     
     /* The iframe is always present in the background */
     iframe {
-      position: relative;
+      position: relative; /* Allow stacking */
       width: 100%;
       height: 100vh;
       border: none;
-      z-index: 1;
+      z-index: 1; /* Behind the initial screen */
       display: block;
     }
     
@@ -64,7 +64,7 @@
 
     /* Dark Red Text */
     .dark-red {
-      color: #2e00c7; /* Dark red color */
+      color: #c71700b5; /* Dark red color */
     }
   </style>
 </head>
@@ -88,16 +88,16 @@
       // Once the animation is done, remove the element (optional).
       initialScreen.addEventListener('transitionend', function() {
         initialScreen.style.display = 'none';
-      }, { once: true });
+      }, { once: true }); // Remove the event listener after it runs once.
     }
     
     // Start the transition after 3 seconds on window load.
     window.addEventListener('load', function() {
-      setTimeout(startTransition, 3000);
+      setTimeout(startTransition, 1500);
     });
     
     // Allow the user to click the initial screen to trigger the transition immediately.
     document.getElementById('initial-screen').addEventListener('click', startTransition);
   </script>
 </body>
-</html>
+</html> // Path: homepage.html
