@@ -19,16 +19,25 @@
       box-sizing: border-box;
     }
     
+    /* Global Typography & Body Settings */
     body {
-      background-color: #f4f4f9; /* Light grey background */
-      color: #333;
+      background-color: #f4f4f9;
       font-family: 'Playfair Display', serif;
-      line-height: 1.6;
       overflow: hidden; /* Prevent scrolling during transition */
     }
     
-    /* Initial Fade-In Screen */
-    #initial-fade-in {
+    /* The iframe is always present in the background */
+    iframe {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      border: none;
+      z-index: 1;
+      display: block;
+    }
+    
+    /* Initial Screen with Text */
+    #initial-screen {
       position: fixed;
       top: 0;
       left: 0;
@@ -43,80 +52,47 @@
       font-family: 'Josefin Sans', sans-serif;
       font-size: 2rem;
       text-align: center;
-      z-index: 10000;
-      opacity: 1;
+      z-index: 1000; /* On top of the iframe */
+      /* Start fully visible */
+      clip-path: circle(100% at 50% 50%);
+      transition: clip-path 3s ease-in-out;
     }
-
-    /* Circular Wipe Transition */
-    .circle-transition {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      width: 200vw;
-      height: 200vw;
-      background-color: #000;
-      border-radius: 50%;
-      transform: translate(-50%, -50%) scale(1);
-      transition: transform 1.5s ease-in-out;
-      z-index: 9999;
-    }
-    .circle-transition.expand {
-      transform: translate(-50%, -50%) scale(0);
-    }
-
-    /* iframe */
-    iframe {
-      width: 100%;
-      height: 100vh;
-      border: none;
-      display: none;
-    }
-    iframe.visible {
-      display: block;
+    /* Squeezed state: clip-path shrinks to a point */
+    #initial-screen.squeezed {
+      clip-path: circle(0% at 50% 50%);
     }
   </style>
 </head>
 <body>
-  <!-- Initial Fade-In Screen -->
-  <div id="initial-fade-in">
+  <!-- The iframe is loaded in the background -->
+  <iframe src="homepage.html"></iframe>
+
+  <!-- Initial Screen with Text on Top -->
+  <div id="initial-screen">
     <p>The Future of AI is Here:</p>
     <p>Don't Get Left Behind.</p>
   </div>
 
-  <!-- Circular Wipe Transition -->
-  <div class="circle-transition" id="circle-transition"></div>
-
-  <!-- iframe to load homepage.html -->
-  <iframe id="homepage-iframe" src="homepage.html"></iframe>
-
   <script>
-    function hideInitialFadeIn() {
-      var fadeElem = document.getElementById('initial-fade-in');
-      var circleTransition = document.getElementById('circle-transition');
-      var iframe = document.getElementById('homepage-iframe');
-
-      // Start transition
-      circleTransition.classList.add('expand');
-
-      // Delay to ensure smooth transition before showing iframe
-      setTimeout(() => {
-        iframe.classList.add('visible');
-      }, 1000);
-
-      // Ensure elements are hidden after transition completes
-      circleTransition.addEventListener('transitionend', function() {
-        fadeElem.style.display = 'none';
-        circleTransition.style.display = 'none';
-      }, { once: true }); // Remove event listener after it fires once
+    function startTransition() {
+      var initialScreen = document.getElementById('initial-screen');
+      
+      // Start the "squeeze" animation.
+      initialScreen.classList.add('squeezed');
+      
+      // Once the animation is done, remove the element (optional).
+      initialScreen.addEventListener('transitionend', function() {
+        initialScreen.style.display = 'none';
+      }, { once: true });
     }
     
-    // On window load, auto-hide the initial screen after 3 seconds
+    // Start the transition after 3 seconds on window load.
     window.addEventListener('load', function() {
-      setTimeout(hideInitialFadeIn, 3000);
+      setTimeout(startTransition, 3000);
     });
-
-    // Hide immediately when clicked
-    document.getElementById('initial-fade-in').addEventListener('click', hideInitialFadeIn);
+    
+    // Allow the user to click the initial screen to trigger the transition immediately.
+    document.getElementById('initial-screen').addEventListener('click', startTransition);
   </script>
 </body>
 </html>
