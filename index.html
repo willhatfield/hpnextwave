@@ -22,7 +22,7 @@
     /* Global Typography & Body Settings */
     body {
       background-color: #f4f4f9;
-      font-family: 'Playfair Display', serif;
+      font-family: 'Cinzel', serif;
       overflow: hidden; /* Prevent scrolling during transition */
     }
     
@@ -49,7 +49,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      font-family: 'Josefin Sans', sans-serif;
+      font-family: 'Cinzel', serif;
       font-size: 2rem;
       text-align: center;
       z-index: 1000; /* On top of the iframe */
@@ -61,6 +61,11 @@
     #initial-screen.squeezed {
       clip-path: circle(0% at 50% 50%);
     }
+
+    /* Dark Red Text */
+    .dark-red {
+      color: #2e00c7; /* Dark red color */
+    }
   </style>
 </head>
 <body>
@@ -70,7 +75,7 @@
   <!-- Initial Screen with Text on Top -->
   <div id="initial-screen">
     <p>The Future of AI is Here:</p>
-    <p>Don't Get Left Behind.</p>
+    <p class="dark-red">Don't Get Left Behind.</p>
   </div>
 
   <script>
