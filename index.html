@@ -66,6 +66,27 @@
     .dark-red {
       color: #c71700b5; /* Dark red color */
     }
+
+    /* Typing Animation */
+    .typing {
+      border-right: 2px solid #fff;
+      animation: blink 0.7s step-end infinite;
+    }
+
+    .typing-red {
+      border-right: 2px solid #c71700b5; /* Dark red cursor */
+      animation: blink-red 0.7s step-end infinite;
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent; }
+      50% { border-color: white; }
+    }
+
+    @keyframes blink-red {
+      from, to { border-color: transparent; }
+      50% { border-color: #c71700b5; }
+    }
   </style>
 </head>
 <body>
@@ -74,30 +95,66 @@
 
   <!-- Initial Screen with Text on Top -->
   <div id="initial-screen">
-    <p>The Future of AI is Here:</p>
-    <p class="dark-red">Don't Get Left Behind.</p>
+    <p id="line1" class="typing"></p>
+    <p id="line2" class="dark-red"></p>
   </div>
 
   <script>
+    function typeText(element, text, callback) {
+      let i = 0;
+      const interval = setInterval(() => {
+        if (i < text.length) {
+          element.textContent += text.charAt(i);
+          i++;
+        } else {
+          clearInterval(interval);
+          element.classList.remove('typing'); // Remove cursor after typing
+          element.classList.remove('typing-red'); // Remove red cursor after typing
+          if (callback) callback();
+        }
+      }, 100);
+    }
+
+    function deleteText(element, callback) {
+      let text = element.textContent;
+      const interval = setInterval(() => {
+        if (text.length > 0) {
+          text = text.slice(0, -1);
+          element.textContent = text;
+        } else {
+          clearInterval(interval);
+          if (callback) callback();
+        }
+      }, 50);
+    }
+
     function startTransition() {
       var initialScreen = document.getElementById('initial-screen');
-      
-      // Start the "squeeze" animation.
       initialScreen.classList.add('squeezed');
-      
-      // Once the animation is done, remove the element (optional).
       initialScreen.addEventListener('transitionend', function() {
         initialScreen.style.display = 'none';
-      }, { once: true }); // Remove the event listener after it runs once.
+      }, { once: true });
     }
-    
-    // Start the transition after 3 seconds on window load.
+
     window.addEventListener('load', function() {
-      setTimeout(startTransition, 1500);
+      const line1 = document.getElementById('line1');
+      const line2 = document.getElementById('line2');
+
+      setTimeout(() => {
+        typeText(line1, "The Future of AI is Here", () => {
+          setTimeout(() => {
+            deleteText(line1, () => {
+              line2.classList.add('typing-red'); // Add red cursor before typing
+              typeText(line2, "Don't Get Left Behind.", () => {
+                setTimeout(startTransition, 500); // Start transition after 0.5 seconds
+              });
+            });
+          }, 1000);
+        });
+      }, 1000); // Delay the initial typing by 1 second
     });
-    
-    // Allow the user to click the initial screen to trigger the transition immediately.
+
     document.getElementById('initial-screen').addEventListener('click', startTransition);
   </script>
 </body>
-</html> // Path: homepage.html
+</html>
