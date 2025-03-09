@@ -113,10 +113,19 @@
     .contact-info li {
       margin-bottom: 0.8em;
     }
+    
+    /* Form Container (maintains space after submission) */
+    .form-container {
+      position: relative;
+      min-height: 450px; /* Reserve enough space */
+    }
+    
+    /* Contact Form Styles */
     .contact-section form {
       max-width: 600px;
       margin: 0 auto;
       text-align: left;
+      transition: opacity 0.4s ease;
     }
     .contact-section form label {
       display: block;
@@ -130,6 +139,12 @@
       margin-bottom: 20px;
       border: 1px solid #ccc;
       border-radius: 5px;
+      transition: border-color 0.3s ease;
+    }
+    .contact-section form input:focus,
+    .contact-section form textarea:focus {
+      border-color: #1a1a1a;
+      outline: none;
     }
     .contact-section form button {
       display: block;
@@ -141,16 +156,52 @@
       border-radius: 5px;
       font-size: 1rem;
       cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
     }
     .contact-section form button:hover {
       background-color: #333;
+      transform: scale(1.02);
+    }
+    
+    /* Success Overlay Styles */
+    .success-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.95);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease-in-out;
+    }
+    .success-overlay.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .success-animation .circle {
+      width: 80px;
+      height: 80px;
+      border: 2px solid #28a745;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    /* Inline SVG Check Mark */
+    .checkmark {
+      width: 40px;
+      height: 40px;
     }
     .thank-you-message {
-      display: none;
-      text-align: center;
       font-size: 1.5rem;
       color: #333;
-      margin-top: 20px;
     }
     
     /* Footer */
@@ -201,23 +252,36 @@
         <li><strong>Email:</strong> <a href="mailto:hpnextwave@gmail.com">hpnextwave@gmail.com</a></li>
       </ul>
       <h2>Send Us a Message</h2>
-      <form id="contact-form" action="https://formspree.io/f/xrbenlky" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="company">Company:</label>
-        <input type="text" id="company" name="company">
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-        
-        <button type="submit">Send Message</button>
-      </form>
-      <div class="thank-you-message" id="thank-you-message">
-        Thank you for submitting the form. We will get back to you soon.
+      <!-- Form Container preserves layout after submission -->
+      <div class="form-container">
+        <form id="contact-form" action="https://formspree.io/f/xrbenlky" method="post">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          
+          <label for="company">Company:</label>
+          <input type="text" id="company" name="company">
+          
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          
+          <button type="submit">Send Message</button>
+        </form>
+        <!-- Success overlay will appear on top of the form -->
+        <div class="success-overlay" id="success-overlay">
+          <div class="success-animation">
+            <div class="circle">
+              <svg class="checkmark" viewBox="0 0 52 52">
+                <path d="M14 27 l10 10 l20 -20" fill="none" stroke="#28a745" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="thank-you-message" id="thank-you-message">
+              Thank you for submitting the form. We will get back to you soon.
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -239,7 +303,7 @@
       document.body.classList.add('fade-in');
     });
 
-    // Handle form submission
+    // Handle form submission without collapsing page layout
     document.getElementById('contact-form').addEventListener('submit', function(event) {
       event.preventDefault();
       var form = event.target;
@@ -253,12 +317,17 @@
         }
       }).then(function(response) {
         if (response.ok) {
-          form.style.display = 'none';
-          document.getElementById('thank-you-message').style.display = 'block';
+          // Optionally disable the form inputs after submission
+          Array.from(form.elements).forEach(function(el) {
+            el.disabled = true;
+          });
+          // Show the success overlay without hiding the form
+          var successOverlay = document.getElementById('success-overlay');
+          successOverlay.classList.add('visible');
         } else {
           response.json().then(function(data) {
-            if (Object.hasOwn(data, 'errors')) {
-              alert(data["errors"].map(error => error["message"]).join(", "));
+            if (data.errors) {
+              alert(data.errors.map(function(error) { return error.message; }).join(", "));
             } else {
               alert('Oops! There was a problem submitting your form');
             }

@@ -53,13 +53,11 @@
       font-size: 2rem;
       text-align: center;
       z-index: 1000; /* On top of the iframe */
-      /* Start fully visible */
-      clip-path: circle(100% at 50% 50%);
-      transition: clip-path 3s ease-in-out;
+      transition: transform 1750ms ease-in-out; /* Slower slide-up transition */
     }
-    /* Squeezed state: clip-path shrinks to a point */
-    #initial-screen.squeezed {
-      clip-path: circle(0% at 50% 50%);
+    /* Slide up */
+    #initial-screen.slide-up {
+      transform: translateY(-100%);
     }
 
     /* Dark Red Text */
@@ -74,7 +72,7 @@
     }
 
     .typing-red {
-      border-right: 2px solid #c71700b5; /* Dark red cursor */
+      border-right: 2px solid #c60101; /* Dark red cursor */
       animation: blink-red 0.7s step-end infinite;
     }
 
@@ -85,7 +83,7 @@
 
     @keyframes blink-red {
       from, to { border-color: transparent; }
-      50% { border-color: #c71700b5; }
+      50% { border-color: #c60101; }
     }
   </style>
 </head>
@@ -100,6 +98,7 @@
   </div>
 
   <script>
+    // Function to type text with a blinking cursor
     function typeText(element, text, callback) {
       let i = 0;
       const interval = setInterval(() => {
@@ -112,9 +111,10 @@
           element.classList.remove('typing-red'); // Remove red cursor after typing
           if (callback) callback();
         }
-      }, 100);
+      }, 60); // Typing speed (adjust this value to change typing speed)
     }
 
+    // Function to delete text with a blinking cursor
     function deleteText(element, callback) {
       let text = element.textContent;
       const interval = setInterval(() => {
@@ -125,17 +125,22 @@
           clearInterval(interval);
           if (callback) callback();
         }
-      }, 50);
+      }, 43.3333); // Deleting speed (adjust this value to change deleting speed)
     }
 
+    // Function to start the slide-up transition and scroll down
     function startTransition() {
       var initialScreen = document.getElementById('initial-screen');
-      initialScreen.classList.add('squeezed');
-      initialScreen.addEventListener('transitionend', function() {
-        initialScreen.style.display = 'none';
-      }, { once: true });
+      initialScreen.classList.add('slide-up');
+      setTimeout(() => {
+        window.scrollTo({
+          top: window.innerHeight,
+          behavior: 'smooth'
+        });
+      }, 1750); // Delay to match the slide-up transition (adjust this value to change delay)
     }
 
+    // Event listener for page load
     window.addEventListener('load', function() {
       const line1 = document.getElementById('line1');
       const line2 = document.getElementById('line2');
@@ -146,14 +151,15 @@
             deleteText(line1, () => {
               line2.classList.add('typing-red'); // Add red cursor before typing
               typeText(line2, "Don't Get Left Behind.", () => {
-                setTimeout(startTransition, 500); // Start transition after 0.5 seconds
+                setTimeout(startTransition, 500); // Start transition after 0.5 seconds (adjust this value to change delay)
               });
             });
-          }, 1000);
+          }, 500); // Delay before deleting text (adjust this value to change delay)
         });
-      }, 1000); // Delay the initial typing by 1 second
+      }, 700); // Delay the initial typing by 1 second (adjust this value to change delay)
     });
 
+    // Event listener for click on the initial screen
     document.getElementById('initial-screen').addEventListener('click', startTransition);
   </script>
 </body>
