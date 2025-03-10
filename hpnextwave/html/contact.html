@@ -8,7 +8,7 @@
   <!-- Google Fonts Import -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 
   <style>
@@ -23,7 +23,7 @@
     body {
       background-color: #f4f4f9; /* Light grey background */
       color: #333; /* Dark grey text */
-      font-family: 'Cinzel', serif;
+      font-family: 'Playfair Display', serif;
       line-height: 1.6;
       opacity: 0; /* Start hidden for fade-in effect */
       transition: opacity 0.4s ease-in-out;
@@ -45,7 +45,7 @@
       z-index: 1000;
     }
     .brand {
-      font-family: 'Cinzel', serif;
+      font-family: 'Playfair Display', serif;
       font-size: 1.5rem;
       font-weight: 700;
     }
@@ -63,7 +63,7 @@
     
     /* Hero Section */
     .hero {
-      background-image: url('assets/32993994_840843081452.png'); /* Replace with your actual image path */
+      background-image: url('assets/hero-image.png');
       background-size: cover;
       background-position: center;
       min-height: 60vh;
@@ -76,7 +76,7 @@
       padding: 100px 20px;
     }
     .hero h1 {
-      font-family: 'Cinzel', serif;
+      font-family: 'Playfair Display', serif;
       font-size: 3rem;
       margin-bottom: 10px;
       font-weight: 700;
@@ -98,7 +98,7 @@
       line-height: 1.8;
     }
     .contact-section h2 {
-      font-family: 'Cinzel', serif;
+      font-family: 'Playfair Display', serif;
       font-size: 2rem;
       margin-bottom: 20px;
     }
@@ -114,10 +114,10 @@
       margin-bottom: 0.8em;
     }
     
-    /* Form Container (maintains space after submission) */
+    /* Form Container */
     .form-container {
       position: relative;
-      min-height: 450px; /* Reserve enough space */
+      min-height: 450px;
     }
     
     /* Contact Form Styles */
@@ -194,7 +194,6 @@
       justify-content: center;
       margin: 0 auto 20px;
     }
-    /* Inline SVG Check Mark */
     .checkmark {
       width: 40px;
       height: 40px;
@@ -206,7 +205,7 @@
     
     /* Footer */
     footer {
-      background-color: #1a1a1a; /* Dark grey footer */
+      background-color: #1a1a1a;
       color: #ccc;
       padding: 30px 20px;
       font-size: 0.9rem;
@@ -239,7 +238,7 @@
   <!-- Hero Section -->
   <section class="hero">
     <h1>Contact Us</h1>
-    <p>We'd love to hear from you. Get in touch with us today.</p>
+    <p>Get in touch with us to learn more about our AI solutions</p>
   </section>
   
   <!-- Main Content -->
@@ -248,38 +247,37 @@
       <h2>Our Contact Information</h2>
       <p>You can reach us via the following methods:</p>
       <ul class="contact-info">
-        <li><strong>Phone:</strong> (952) 567-0401</li>
-        <li><strong>Email:</strong> <a href="mailto:hpnextwave@gmail.com">hpnextwave@gmail.com</a></li>
+        <li>Email: contact@hpnextwave.com</li>
+        <li>Phone: (555) 123-4567</li>
+        <li>Address: 123 AI Street, Tech City, TC 12345</li>
       </ul>
-      <h2>Send Us a Message</h2>
-      <!-- Form Container preserves layout after submission -->
+      
       <div class="form-container">
-        <form id="contact-form" action="https://formspree.io/f/xrbenlky" method="post">
+        <form id="contactForm" action="submit_form.php" method="POST">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required>
           
-          <label for="company">Company:</label>
-          <input type="text" id="company" name="company">
-          
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" required>
+          
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" required>
           
           <label for="message">Message:</label>
           <textarea id="message" name="message" rows="5" required></textarea>
           
           <button type="submit">Send Message</button>
         </form>
-        <!-- Success overlay will appear on top of the form -->
-        <div class="success-overlay" id="success-overlay">
+        
+        <div class="success-overlay">
           <div class="success-animation">
             <div class="circle">
-              <svg class="checkmark" viewBox="0 0 52 52">
-                <path d="M14 27 l10 10 l20 -20" fill="none" stroke="#28a745" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+              <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
               </svg>
             </div>
-            <div class="thank-you-message" id="thank-you-message">
-              Thank you for submitting the form. We will get back to you soon.
-            </div>
+            <p class="thank-you-message">Thank you for your message! We'll get back to you soon.</p>
           </div>
         </div>
       </div>
@@ -288,54 +286,29 @@
   
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 H&P NextWave. All Rights Reserved.</p>
-    <p>Contact us: <a href="mailto:hpnextwave@gmail.com">hpnextwave@gmail.com</a></p>
-    <p>Follow us on:
-      <a href="https://twitter.com/phnextwave" target="_blank">Twitter</a> |
-      <a href="https://linkedin.com/company/phnextwave" target="_blank">LinkedIn</a>
-    </p>
+    <p>&copy; 2024 H&P NextWave. All rights reserved.</p>
+    <p>Contact us at <a href="mailto:contact@hpnextwave.com">contact@hpnextwave.com</a></p>
     <p><a href="privacy.html">Privacy Policy</a></p>
   </footer>
-  
+
   <script>
-    // Add fade-in class to body after page load
-    window.addEventListener('load', function() {
+    // Fade-in effect on page load
+    document.addEventListener('DOMContentLoaded', function() {
       document.body.classList.add('fade-in');
     });
 
-    // Handle form submission without collapsing page layout
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      var form = event.target;
-      var formData = new FormData(form);
-
-      fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      }).then(function(response) {
-        if (response.ok) {
-          // Optionally disable the form inputs after submission
-          Array.from(form.elements).forEach(function(el) {
-            el.disabled = true;
-          });
-          // Show the success overlay without hiding the form
-          var successOverlay = document.getElementById('success-overlay');
-          successOverlay.classList.add('visible');
-        } else {
-          response.json().then(function(data) {
-            if (data.errors) {
-              alert(data.errors.map(function(error) { return error.message; }).join(", "));
-            } else {
-              alert('Oops! There was a problem submitting your form');
-            }
-          });
-        }
-      }).catch(function(error) {
-        alert('Oops! There was a problem submitting your form');
-      });
+    // Form submission handling
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Show success overlay
+      document.querySelector('.success-overlay').classList.add('visible');
+      
+      // Reset form after 3 seconds
+      setTimeout(function() {
+        document.getElementById('contactForm').reset();
+        document.querySelector('.success-overlay').classList.remove('visible');
+      }, 3000);
     });
   </script>
 </body>
