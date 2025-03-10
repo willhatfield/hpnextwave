@@ -28,6 +28,18 @@ jobs:
           mkdir -p deploy
           cp -r html/* deploy/
           cp CNAME deploy/
+          # Ensure index.html exists
+          if [ ! -f deploy/index.html ]; then
+            cp deploy/homepage.html deploy/index.html
+          fi
+
+      - name: Verify deployment files
+        run: |
+          ls -la deploy/
+          echo "Checking for critical files..."
+          [ -f deploy/index.html ] && echo "index.html exists" || echo "index.html missing"
+          [ -f deploy/CNAME ] && echo "CNAME exists" || echo "CNAME missing"
+          [ -f deploy/.nojekyll ] && echo ".nojekyll exists" || echo ".nojekyll missing"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
