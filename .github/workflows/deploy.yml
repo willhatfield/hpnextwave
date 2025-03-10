@@ -1,0 +1,100 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: false
+          fetch-depth: 1
+          sparse-checkout: |
+            html/
+            CNAME
+            .nojekyll
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Create deployment directory
+        run: |
+          # Create deployment directory
+          mkdir -p deploy
+          
+          # Debug: Show current directory structure
+          echo "Current directory structure:"
+          ls -la
+          
+          # Copy all files from html directory
+          echo "Copying files from html directory..."
+          cp -r html/* deploy/
+          
+          # Copy CNAME file if it exists
+          if [ -f "CNAME" ]; then
+            echo "Copying CNAME file..."
+            cp CNAME deploy/
+          else
+            echo "Warning: CNAME file not found"
+          fi
+          
+          # Create .nojekyll file
+          echo "Creating .nojekyll file..."
+          touch deploy/.nojekyll
+          
+          # Create index.html that redirects to homepage.html
+          echo "Creating index.html..."
+          cat > deploy/index.html << 'EOL'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta http-equiv="refresh" content="0; url=homepage.html">
+              <title>Redirecting to H&P NextWave</title>
+          </head>
+          <body>
+              <p>Redirecting to homepage...</p>
+          </body>
+          </html>
+          EOL
+          
+          # Debug: List all files in deploy directory
+          echo "Contents of deploy directory:"
+          ls -la deploy/
+          
+          # Debug: Check critical files
+          echo "Checking critical files..."
+          for file in index.html homepage.html .nojekyll; do
+            if [ -f "deploy/$file" ]; then
+              echo "✓ $file exists"
+            else
+              echo "✗ $file is missing"
+              exit 1
+            fi
+          done
+          
+          # Debug: Check file permissions
+          echo "Checking file permissions..."
+          ls -la deploy/
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'deploy'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 
