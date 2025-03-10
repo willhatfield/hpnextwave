@@ -17,6 +17,7 @@ hpnextwave/react_backup/
 hpnextwave/node_modules/
 **/node_modules/
 **/react_backup/
+**/docs/
 
 # IDE and editor files
 .idea/
@@ -39,4 +40,8 @@ Thumbs.db
 tsconfig.json
 package.json
 package-lock.json
-yarn.lock 
+yarn.lock
+
+# Jekyll files
+.jekyll-cache/
+.jekyll-metadata 

@@ -99,6 +99,14 @@ jobs:
           # Debug: Check for any node_modules
           echo "Checking for node_modules:"
           find deploy -name "node_modules" -type d
+          
+          # Debug: Check for any react_backup directories
+          echo "Checking for react_backup directories:"
+          find deploy -name "react_backup" -type d
+          
+          # Debug: Show all directories in deploy
+          echo "All directories in deploy:"
+          find deploy -type d
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
