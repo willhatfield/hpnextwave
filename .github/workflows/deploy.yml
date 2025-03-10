@@ -46,8 +46,15 @@ jobs:
           # Copy only the necessary files from hpnextwave/html directory
           echo "Copying files from hpnextwave/html directory..."
           if [ -d "hpnextwave/html" ]; then
+            # Copy HTML files
             cp hpnextwave/html/*.html deploy/
-            cp -r hpnextwave/html/assets deploy/
+            
+            # Copy assets directory if it exists
+            if [ -d "hpnextwave/html/assets" ]; then
+              cp -r hpnextwave/html/assets deploy/
+            else
+              echo "Warning: assets directory not found"
+            fi
           else
             echo "Error: hpnextwave/html directory not found"
             exit 1
@@ -79,6 +86,10 @@ jobs:
           # Debug: Check file permissions
           echo "Checking file permissions..."
           ls -la deploy/
+          
+          # Debug: Show final directory structure
+          echo "Final directory structure:"
+          find deploy -type f
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
