@@ -22,10 +22,6 @@ jobs:
         with:
           submodules: false
           fetch-depth: 1
-          sparse-checkout: |
-            html/
-            CNAME
-            .nojekyll
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -39,9 +35,10 @@ jobs:
           echo "Current directory structure:"
           ls -la
           
-          # Copy all files from html directory
-          echo "Copying files from html directory..."
-          cp -r html/* deploy/
+          # Copy all HTML files and assets
+          echo "Copying files..."
+          cp *.html deploy/
+          cp -r assets deploy/
           
           # Copy CNAME file if it exists
           if [ -f "CNAME" ]; then
@@ -54,22 +51,6 @@ jobs:
           # Create .nojekyll file
           echo "Creating .nojekyll file..."
           touch deploy/.nojekyll
-          
-          # Create index.html that redirects to homepage.html
-          echo "Creating index.html..."
-          cat > deploy/index.html << 'EOL'
-          <!DOCTYPE html>
-          <html lang="en">
-          <head>
-              <meta charset="UTF-8">
-              <meta http-equiv="refresh" content="0; url=homepage.html">
-              <title>Redirecting to H&P NextWave</title>
-          </head>
-          <body>
-              <p>Redirecting to homepage...</p>
-          </body>
-          </html>
-          EOL
           
           # Debug: List all files in deploy directory
           echo "Contents of deploy directory:"
