@@ -23,7 +23,7 @@
     body {
       background-color: #f4f4f9; /* Light grey background */
       color: #333; /* Dark grey text */
-      font-family: 'Cinzel', serif;
+      font-family: 'Playfair Display', serif;
       line-height: 1.6;
       opacity: 0; /* Start hidden for fade-in effect */
       transition: opacity 0.4s ease-in-out;
@@ -63,7 +63,7 @@
     
     /* Hero Section */
     .hero {
-      background-image: url('assets/32993994_840843081452.png'); /* Replace with your actual image path */
+      background-image: url('assets/32993994_840843081452.png');
       background-size: cover;
       background-position: center;
       min-height: 60vh;
@@ -181,6 +181,7 @@
       <a href="homepage.html">Home</a>
       <a href="pricing.html">Pricing</a>
       <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
     </nav>
   </header>
   
@@ -202,8 +203,10 @@
             <li>AI-powered analytics</li>
             <li>Basic reporting dashboard</li>
             <li>Up to 5 user accounts</li>
+            <li>Email support</li>
+            <li>Basic API access</li>
           </ul>
-          <button>Choose Plan</button>
+          <button onclick="window.location.href='contact.html'">Get Started</button>
         </div>
         <div class="pricing-plan">
           <h3>Standard Plan</h3>
@@ -212,18 +215,25 @@
             <li>Advanced AI predictions</li>
             <li>Customizable dashboards</li>
             <li>Up to 20 user accounts</li>
+            <li>Priority email support</li>
+            <li>Full API access</li>
+            <li>Custom integrations</li>
           </ul>
-          <button>Choose Plan</button>
+          <button onclick="window.location.href='contact.html'">Get Started</button>
         </div>
         <div class="pricing-plan">
           <h3>Premium Plan</h3>
           <p>$499/month</p>
           <ul>
             <li>Full AI automation suite</li>
-            <li>Priority support &amp; consulting</li>
+            <li>Priority support & consulting</li>
             <li>Unlimited user accounts</li>
+            <li>24/7 phone support</li>
+            <li>Advanced API features</li>
+            <li>Custom development</li>
+            <li>Dedicated account manager</li>
           </ul>
-          <button>Choose Plan</button>
+          <button onclick="window.location.href='contact.html'">Get Started</button>
         </div>
       </div>
     </section>
@@ -231,18 +241,14 @@
   
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 H&P NextWave. All Rights Reserved.</p>
-    <p>Contact us: <a href="mailto:hpnextwave@gmail.com">hpnextwave@gmail.com</a></p>
-    <p>Follow us on:
-      <a href="https://twitter.com/hpnextwave" target="_blank">Twitter</a> |
-      <a href="https://linkedin.com/company/hpnextwave" target="_blank">LinkedIn</a>
-    </p>
+    <p>&copy; 2024 H&P NextWave. All rights reserved.</p>
+    <p>Contact us: <a href="mailto:contact@hpnextwave.com">contact@hpnextwave.com</a></p>
     <p><a href="privacy.html">Privacy Policy</a></p>
   </footer>
   
   <script>
-    // Add fade-in class to body after page load
-    window.addEventListener('load', function() {
+    // Add fade-in effect on page load
+    document.addEventListener('DOMContentLoaded', function() {
       document.body.classList.add('fade-in');
     });
   </script>
