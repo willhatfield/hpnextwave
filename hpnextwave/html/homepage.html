@@ -165,6 +165,9 @@
     }
     
     /* Team Section */
+    .team-section {
+      text-align: center;
+    }
     .team-section .team-member {
       display: inline-block;
       width: 250px;
@@ -217,6 +220,25 @@
       max-width: 1200px;
       margin: 10px auto;
     }
+    
+    /* Typing Effect */
+    .typing-text {
+      overflow: hidden;
+      border-right: 2px solid #ff4444;
+      white-space: nowrap;
+      margin: 0 auto;
+      animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    }
+    
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #ff4444 }
+    }
   </style>
 </head>
 <body>
@@ -234,10 +256,10 @@
   
   <!-- Hero Section -->
   <section class="hero">
-    <h1>Empowering AI Innovations</h1>
+    <h1 class="typing-text">Empowering AI Innovations</h1>
     <p>
-      Transforming businesses with cutting-edge technology, 
-      data-driven insights, and the limitless potential of artificial intelligence.
+      Custom AI solutions that transform your business operations, 
+      enhance decision-making, and drive sustainable growth.
     </p>
   </section>
   
@@ -247,10 +269,10 @@
     <section class="about-section">
       <h2>About H&P NextWave</h2>
       <p>
-        H&P NextWave is a pioneering technology company at the forefront of artificial intelligence, data analytics, and machine learning innovation. Our mission is to empower businesses of all sizes by providing scalable, user-friendly, and cost-effective AI solutions that drive efficiency, enhance decision-making, and fuel growth.
+        H&P NextWave specializes in developing tailored artificial intelligence solutions that address the unique challenges of modern businesses. Our approach combines cutting-edge AI technology with deep industry expertise to deliver solutions that drive measurable results.
       </p>
       <p>
-        With a team of dedicated AI experts, data scientists, and software engineers, we specialize in creating state-of-the-art AI-driven tools and platforms that optimize business operations, unlock valuable insights, and automate complex processes. From predictive analytics to intelligent automation, H&P NextWave enables businesses to harness the full potential of AI, transforming challenges into opportunities.
+        We work closely with each client to understand their specific needs, operational challenges, and growth objectives. This collaborative approach ensures that our AI solutions integrate seamlessly with existing processes while delivering maximum value and ROI.
       </p>
     </section>
   
@@ -258,32 +280,34 @@
     <section class="services-section">
       <h2>Key Services &amp; Offerings</h2>
       <p>
-        H&P NextWave provides a comprehensive suite of AI-powered solutions tailored to meet the diverse needs of businesses across various industries. Our services include:
+        Our comprehensive suite of AI solutions is designed to meet the evolving needs of businesses across industries:
       </p>
       <ol>
         <li>
-          <strong>AI-Powered Data Analytics</strong>
+          <strong>Custom AI Analytics Solutions</strong>
           <ul>
-            <li><em>Predictive Analytics:</em> Anticipate trends, customer behavior, and market fluctuations to make data-driven decisions.</li>
-            <li><em>Big Data Processing:</em> Handle massive datasets with ease, extracting actionable insights from structured and unstructured data.</li>
-            <li><em>Real-Time Data Analysis:</em> Monitor and analyze live data streams to improve operations and responsiveness.</li>
+            <li><em>Predictive Analytics:</em> Tailored forecasting models for your specific market and operational needs.</li>
+            <li><em>Data Processing:</em> Custom algorithms for handling your unique data structures and requirements.</li>
+            <li><em>Real-Time Analysis:</em> Industry-specific monitoring and alerting systems.</li>
           </ul>
         </li>
         <li>
-          <strong>Intelligent Process Automation (IPA)</strong>
+          <strong>Process Automation</strong>
           <ul>
-            <li><em>Robotic Process Automation (RPA):</em> Automate repetitive tasks, freeing up valuable human resources for higher-level work.</li>
-            <li><em>Workflow Optimization:</em> Improve operational efficiency by streamlining and automating key business processes.</li>
-            <li><em>AI-Powered Chatbots:</em> Enhance customer service and engagement with AI-driven virtual assistants.</li>
+            <li><em>Workflow Automation:</em> Custom RPA solutions designed for your specific business processes.</li>
+            <li><em>System Integration:</em> Seamless connection of AI tools with your existing infrastructure.</li>
+            <li><em>Intelligent Assistants:</em> Industry-specific chatbots and virtual assistants.</li>
           </ul>
         </li>
         <li>
-          <strong>Industry-Specific AI Solutions</strong>
+          <strong>Industry Solutions</strong>
           <p>
-            We provide industry-focused AI innovations designed to solve unique challenges across various sectors:
+            Our industry-specific AI solutions address unique challenges:
           </p>
           <ul>
-            <li>Marketing &amp; Customer Engagement: AI-driven ad targeting, chatbots, and customer sentiment analysis.</li>
+            <li>Custom AI models for your sector's specific requirements and compliance needs.</li>
+            <li>Tailored analytics dashboards for your business metrics.</li>
+            <li>Specialized automation tools for your operational workflows.</li>
           </ul>
         </li>
       </ol>
@@ -295,12 +319,12 @@
       <div class="team-member">
         <img src="assets/WillHatfieldPhoto.png" alt="William Hatfield">
         <h3>William Hatfield</h3>
-        <p>Founder &amp; CEO</p>
+        <p>Co-Founder &amp; CEO</p>
       </div>
       <div class="team-member">
         <img src="assets/BlakePalm2.png" alt="Blake Palm">
         <h3>Blake Palm</h3>
-        <p>Head of Business Operations</p>
+        <p>Co-Founder &amp; CFO</p>
       </div>
     </section>
   </main>
