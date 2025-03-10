@@ -35,15 +35,6 @@ jobs:
           # Create .nojekyll file first to prevent Jekyll processing
           touch deploy/.nojekyll
           
-          # Debug: Show current directory structure
-          echo "Current directory structure:"
-          ls -la
-          
-          # Clean up any existing node_modules and react_backup directories
-          echo "Cleaning up unnecessary directories..."
-          find . -name "node_modules" -type d -exec rm -rf {} +
-          find . -name "react_backup" -type d -exec rm -rf {} +
-          
           # Copy only the necessary files from hpnextwave/html directory
           echo "Copying files from hpnextwave/html directory..."
           if [ -d "hpnextwave/html" ]; then
@@ -69,44 +60,9 @@ jobs:
             echo "Warning: CNAME file not found"
           fi
           
-          # Debug: List all files in deploy directory
-          echo "Contents of deploy directory:"
-          ls -la deploy/
-          
-          # Debug: Check critical files
-          echo "Checking critical files..."
-          for file in index.html homepage.html .nojekyll; do
-            if [ -f "deploy/$file" ]; then
-              echo "✓ $file exists"
-            else
-              echo "✗ $file is missing"
-              exit 1
-            fi
-          done
-          
-          # Debug: Check file permissions
-          echo "Checking file permissions..."
-          ls -la deploy/
-          
           # Debug: Show final directory structure
           echo "Final directory structure:"
           find deploy -type f
-          
-          # Debug: Check for any .md files
-          echo "Checking for .md files:"
-          find deploy -name "*.md" -type f
-          
-          # Debug: Check for any node_modules
-          echo "Checking for node_modules:"
-          find deploy -name "node_modules" -type d
-          
-          # Debug: Check for any react_backup directories
-          echo "Checking for react_backup directories:"
-          find deploy -name "react_backup" -type d
-          
-          # Debug: Show all directories in deploy
-          echo "All directories in deploy:"
-          find deploy -type d
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
