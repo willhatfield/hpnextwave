@@ -223,7 +223,7 @@
         </div>
         
         <div class="contact-form">
-          <form id="contactForm" action="#" method="POST">
+          <form action="https://formsubmit.co/will@hpnextwave.com" method="POST" class="contact-form">
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" required>
@@ -235,16 +235,20 @@
             </div>
             
             <div class="form-group">
-              <label for="company">Company</label>
-              <input type="text" id="company" name="company">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required>
             </div>
             
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea id="message" name="message" required></textarea>
+              <textarea id="message" name="message" rows="5" required></textarea>
             </div>
             
-            <button type="submit">Send Message</button>
+            <input type="hidden" name="_subject" value="New Contact Form Submission">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://hpnextwave.com/thank-you.html">
+            <input type="hidden" name="_captcha" value="true">
+            <button type="submit" class="btn">Send Message</button>
           </form>
         </div>
       </div>
