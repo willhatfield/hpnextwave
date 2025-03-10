@@ -1,63 +1,69 @@
 # H&P NextWave Website
 
-This repository contains both the HTML and React versions of the H&P NextWave website.
+This repository contains the website for H&P NextWave, a technology company specializing in AI innovations.
 
 ## Repository Structure
 
-- `/html` - Original HTML version of the website
-- `/react` - New React version of the website (in development)
+```
+hpnextwave/
+├── html/              # Main website (HTML + React components)
+│   ├── components/    # React components used in the hybrid version
+│   ├── assets/       # Images, styles, and other static assets
+│   └── *.html        # HTML pages
+├── reference/        # Reference implementations
+│   └── react/       # Full React version (for reference and testing)
+└── README.md        # This file
+```
 
-## HTML Version
+## Main Website (HTML Version)
 
-The HTML version is a static website built with HTML, CSS, and JavaScript. It can be found in the `/html` directory.
+The main website is located in the `/html` directory and uses a hybrid approach combining static HTML with React components for enhanced interactivity.
 
-## React Version
+### Development
+1. Navigate to the `/html` directory
+2. Open any HTML file in a web browser to view
+3. Edit HTML files directly to make changes
 
-The React version is a modern, component-based implementation built with:
+### Technologies Used
+- HTML5
+- CSS3
+- React (via CDN)
+- Google Fonts
+
+## Reference Implementation (React Version)
+
+The `/reference/react` directory contains a full React implementation of the website. This version serves as a reference and testing ground for new features before they are integrated into the main hybrid version.
+
+### Development
+1. Navigate to `/reference/react`
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+### Technologies Used
 - React
 - TypeScript
 - Vite
-- Emotion (CSS-in-JS)
-- Framer Motion
-- React Router
-
-### Development
-
-To run the React version locally:
-
-```bash
-cd react
-npm install
-npm run dev
-```
-
-### Building for Production
-
-```bash
-cd react
-npm run build
-```
-
-The built files will be in the `react/dist` directory.
+- Tailwind CSS
 
 ## Deployment
 
-Both versions are deployed using GitHub Pages:
-- HTML version: Main branch
-- React version: React branch
+The website is deployed using GitHub Pages. The deployment process is automated using GitHub Actions and will deploy the contents of the `/html` directory to the main website.
 
-## Technologies Used
+### Custom Domain
+The website is configured to use the custom domain `hpnextwave.com`. The CNAME file in the `/html` directory manages this configuration.
 
-### HTML Version
-- HTML5
-- CSS3
-- JavaScript
-- PHP (for form handling)
+## Contributing
 
-### React Version
-- React
-- TypeScript
-- Vite
-- Emotion (CSS-in-JS)
-- Framer Motion
-- React Router 
+1. Create a new branch for your changes
+2. Make your changes
+3. Submit a pull request
+
+## License
+
+All rights reserved. © 2025 H&P NextWave 
