@@ -37,8 +37,20 @@ jobs:
           # Create .nojekyll file
           touch deploy/.nojekyll
           
-          # Create index.html from homepage.html
-          cp deploy/homepage.html deploy/index.html
+          # Create index.html that redirects to homepage.html
+          cat > deploy/index.html << 'EOL'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta http-equiv="refresh" content="0; url=homepage.html">
+              <title>Redirecting to H&P NextWave</title>
+          </head>
+          <body>
+              <p>Redirecting to homepage...</p>
+          </body>
+          </html>
+          EOL
           
           # Debug: List all files in deploy directory
           echo "Contents of deploy directory:"
