@@ -24,11 +24,7 @@
   <!-- Google Fonts Import -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- 
-    "Bodoni Moda" will be used for headings (header, hero title, section titles)
-    "Playfair Display" will be used for body text
-  -->
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 
   <style>
@@ -41,11 +37,11 @@
     
     /* Global Typography & Body Settings */
     body {
-      background-color: #121212; /* Dark background */
-      color: #ffffff; /* White text */
+      background-color: #f4f4f9; /* Light grey background */
+      color: #333; /* Dark grey text */
       font-family: 'Playfair Display', serif;
       line-height: 1.6;
-      opacity: 0;
+      opacity: 0; /* Start hidden for fade-in effect */
       transition: opacity 0.4s ease-in-out;
     }
     body.fade-in {
@@ -54,44 +50,39 @@
     
     /* Header & Navigation */
     header {
-      background-color: #1a1a1a;
+      background-color: #1a1a1a;  /* Dark grey header bar */
       color: #fff;
-      padding: 15px 20px;
+      padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid #333;
     }
     .brand {
-      font-family: 'Bodoni Moda', serif;
-      font-size: 1.8rem;
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
       font-weight: 700;
-      color: #ff4444; /* Red accent color */
     }
     nav a {
       color: #fff;
       text-decoration: none;
-      margin: 0 15px;
+      margin: 0 10px;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.95rem;
       transition: color 0.2s ease;
-      padding: 8px 15px;
-      border-radius: 4px;
     }
     nav a:hover {
-      color: #ff4444;
-      background-color: rgba(255, 68, 68, 0.1);
+      color: #888;
     }
     
     /* Hero Section */
     .hero {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/32993994_840843081452.png');
+      background-image: url('assets/32993994_840843081452.png');
       background-size: cover;
       background-position: center;
-      min-height: 80vh;
+      min-height: 60vh;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -99,20 +90,17 @@
       text-align: center;
       color: #fff;
       padding: 100px 20px;
-      position: relative;
     }
     .hero h1 {
-      font-family: 'Bodoni Moda', serif;
-      font-size: 3.5rem;
-      margin-bottom: 20px;
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      margin-bottom: 10px;
       font-weight: 700;
-      color: #ff4444;
     }
     .hero p {
-      font-size: 1.4rem;
-      max-width: 800px;
+      font-size: 1.2rem;
+      max-width: 700px;
       margin: 0 auto;
-      line-height: 1.8;
     }
     
     /* Main Content */
@@ -120,128 +108,99 @@
       width: 90%;
       max-width: 1200px;
       margin: 0 auto 40px;
-      padding: 40px 0;
     }
     
-    /* Section Styling */
-    section {
-      background-color: #1a1a1a;
-      border-radius: 8px;
-      padding: 40px;
-      margin-bottom: 40px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* About Section */
+    .about-section {
+      margin-top: 40px;
+      line-height: 1.8;
     }
-    
-    section h2 {
-      font-family: 'Bodoni Moda', serif;
-      font-size: 2.2rem;
-      margin-bottom: 25px;
-      color: #ff4444;
+    .about-section h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
     }
-    
-    section p {
+    .about-section p {
       margin-bottom: 1.5em;
       font-size: 1.1rem;
-      color: #e0e0e0;
     }
     
     /* Services Section */
+    .services-section {
+      margin-top: 40px;
+      line-height: 1.8;
+    }
+    .services-section h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .services-section p {
+      margin-bottom: 1em;
+      font-size: 1.1rem;
+    }
     .services-section ol {
       margin-left: 20px;
       font-size: 1.1rem;
       margin-bottom: 1.5em;
-      color: #e0e0e0;
     }
     .services-section ul {
       margin-left: 20px;
       margin-bottom: 1em;
       list-style-type: disc;
-      color: #e0e0e0;
     }
     .services-section li {
-      margin-bottom: 0.8em;
-    }
-    .services-section strong {
-      color: #ff4444;
-    }
-    .services-section em {
-      color: #ff4444;
+      margin-bottom: 0.5em;
     }
     
     /* Team Section */
     .team-section {
+      margin-top: 40px;
+      line-height: 1.8;
       text-align: center;
+    }
+    .team-section h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
     }
     .team-section .team-member {
       display: inline-block;
-      width: 250px;
+      width: 200px;
       margin: 20px;
       text-align: center;
-      background-color: #242424;
-      padding: 20px;
-      border-radius: 8px;
-      transition: transform 0.3s ease;
-    }
-    .team-section .team-member:hover {
-      transform: translateY(-5px);
     }
     .team-section .team-member img {
-      width: 180px;
-      height: 180px;
+      width: 100%;
       border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #ff4444;
-      margin-bottom: 15px;
     }
     .team-section .team-member h3 {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       margin-top: 10px;
-      color: #ff4444;
     }
     .team-section .team-member p {
       font-size: 1rem;
-      color: #e0e0e0;
+      color: #666;
     }
     
     /* Footer */
     footer {
-      background-color: #1a1a1a;
-      color: #e0e0e0;
-      padding: 40px 20px;
+      background-color: #1a1a1a; /* Dark grey footer */
+      color: #ccc;
+      padding: 30px 20px;
       font-size: 0.9rem;
       text-align: center;
-      border-top: 1px solid #333;
     }
     footer a {
-      color: #ff4444;
+      color: #ccc;
       text-decoration: none;
-      transition: color 0.2s ease;
     }
     footer a:hover {
-      color: #ff6666;
+      text-decoration: underline;
     }
     footer p {
       max-width: 1200px;
-      margin: 10px auto;
-    }
-    
-    /* Typing Effect */
-    .typing-text {
-      overflow: hidden;
-      border-right: 2px solid #ff4444;
-      white-space: nowrap;
       margin: 0 auto;
-      animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-    }
-    
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-    
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: #ff4444 }
     }
   </style>
 </head>
@@ -260,96 +219,58 @@
   
   <!-- Hero Section -->
   <section class="hero">
-    <h1 class="typing-text">Empowering AI Innovations</h1>
-    <p>
-      Transforming businesses with cutting-edge technology, 
-      data-driven insights, and the limitless potential of artificial intelligence.
-    </p>
+    <h1>Welcome to H&P NextWave</h1>
+    <p>Empowering businesses with cutting-edge AI solutions</p>
   </section>
   
   <!-- Main Content -->
   <main>
     <!-- About Section -->
     <section class="about-section">
-      <h2>About H&P NextWave</h2>
-      <p>
-        H&P NextWave is a pioneering technology company at the forefront of artificial intelligence, data analytics, and machine learning innovation. Our mission is to empower businesses of all sizes by providing scalable, user-friendly, and cost-effective AI solutions that drive efficiency, enhance decision-making, and fuel growth.
-      </p>
-      <p>
-        With a team of dedicated AI experts, data scientists, and software engineers, we specialize in creating state-of-the-art AI-driven tools and platforms that optimize business operations, unlock valuable insights, and automate complex processes. From predictive analytics to intelligent automation, H&P NextWave enables businesses to harness the full potential of AI, transforming challenges into opportunities.
-      </p>
+      <h2>About Us</h2>
+      <p>H&P NextWave is a technology company specializing in AI innovations. We help businesses leverage the power of artificial intelligence to transform their operations and drive growth.</p>
+      <p>Our team of experts combines deep technical knowledge with practical business experience to deliver solutions that make a real difference.</p>
     </section>
   
-    <!-- Key Services & Offerings Section -->
+    <!-- Services Section -->
     <section class="services-section">
-      <h2>Key Services &amp; Offerings</h2>
-      <p>
-        H&P NextWave provides a comprehensive suite of AI-powered solutions tailored to meet the diverse needs of businesses across various industries. Our services include:
-      </p>
+      <h2>Our Services</h2>
+      <p>We offer a comprehensive range of AI-powered services to help your business thrive:</p>
       <ol>
-        <li>
-          <strong>AI-Powered Data Analytics</strong>
-          <ul>
-            <li><em>Predictive Analytics:</em> Anticipate trends, customer behavior, and market fluctuations to make data-driven decisions.</li>
-            <li><em>Big Data Processing:</em> Handle massive datasets with ease, extracting actionable insights from structured and unstructured data.</li>
-            <li><em>Real-Time Data Analysis:</em> Monitor and analyze live data streams to improve operations and responsiveness.</li>
-          </ul>
-        </li>
-        <li>
-          <strong>Intelligent Process Automation (IPA)</strong>
-          <ul>
-            <li><em>Robotic Process Automation (RPA):</em> Automate repetitive tasks, freeing up valuable human resources for higher-level work.</li>
-            <li><em>Workflow Optimization:</em> Improve operational efficiency by streamlining and automating key business processes.</li>
-            <li><em>AI-Powered Chatbots:</em> Enhance customer service and engagement with AI-driven virtual assistants.</li>
-          </ul>
-        </li>
-        <li>
-          <strong>Industry-Specific AI Solutions</strong>
-          <p>
-            We provide industry-focused AI innovations designed to solve unique challenges across various sectors:
-          </p>
-          <ul>
-            <li>Marketing &amp; Customer Engagement: AI-driven ad targeting, chatbots, and customer sentiment analysis.</li>
-          </ul>
-        </li>
+        <li>AI Consulting</li>
+        <li>Custom AI Solutions Development</li>
+        <li>Machine Learning Model Training</li>
+        <li>AI Integration Services</li>
+        <li>AI Training and Workshops</li>
       </ol>
     </section>
   
     <!-- Team Section -->
     <section class="team-section">
-      <h2>Meet Our Team</h2>
+      <h2>Our Team</h2>
       <div class="team-member">
-        <img src="assets/WillHatfieldPhoto.png" alt="William Hatfield">
-        <h3>William Hatfield</h3>
-        <p>Founder &amp; CEO</p>
+        <img src="assets/WillHatfieldPhoto.png" alt="Will Hatfield">
+        <h3>Will Hatfield</h3>
+        <p>Co-Founder & CEO</p>
       </div>
       <div class="team-member">
         <img src="assets/BlakePalm2.png" alt="Blake Palm">
         <h3>Blake Palm</h3>
-        <p>Head of Business Operations</p>
-      </div>
-      <div class="team-member">
-        <img src="assets/team-member3.jpg" alt="Robert Alexander">
-        <h3>Robert Alexander</h3>
-        <p>Intern</p>
+        <p>Co-Founder & CFO</p>
       </div>
     </section>
   </main>
   
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 H&P NextWave. All Rights Reserved.</p>
-    <p>Contact us: <a href="mailto:hpnextwave@gmail.com">hpnextwave@gmail.com</a></p>
-    <p>Follow us on:
-      <a href="https://twitter.com/hpnextwave" target="_blank">Twitter</a> |
-      <a href="https://linkedin.com/company/hpnextwave" target="_blank">LinkedIn</a>
-    </p>
+    <p>&copy; 2024 H&P NextWave. All rights reserved.</p>
+    <p>Contact us: <a href="mailto:contact@hpnextwave.com">contact@hpnextwave.com</a></p>
     <p><a href="privacy.html">Privacy Policy</a></p>
   </footer>
   
   <script>
-    // Add fade-in class to body after page load
-    window.addEventListener('load', function() {
+    // Add fade-in effect on page load
+    document.addEventListener('DOMContentLoaded', function() {
       document.body.classList.add('fade-in');
     });
   </script>
