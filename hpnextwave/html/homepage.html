@@ -243,165 +243,107 @@
 </head>
 <body>
   <!-- Header -->
-  <div id="header-root"></div>
+  <header>
+    <div class="brand">
+      H&P NextWave
+    </div>
+    <nav>
+      <a href="homepage.html">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
   
   <!-- Hero Section -->
-  <div id="hero-root"></div>
+  <section class="hero">
+    <h1>Empowering AI Innovations</h1>
+    <p>
+      Transforming businesses with cutting-edge technology, 
+      data-driven insights, and the limitless potential of artificial intelligence.
+    </p>
+  </section>
   
   <!-- Main Content -->
   <main>
     <!-- About Section -->
-    <div id="about-root"></div>
+    <section class="about-section">
+      <h2>About H&P NextWave</h2>
+      <p>
+        H&P NextWave is a pioneering technology company at the forefront of artificial intelligence, data analytics, and machine learning innovation. Our mission is to empower businesses of all sizes by providing scalable, user-friendly, and cost-effective AI solutions that drive efficiency, enhance decision-making, and fuel growth.
+      </p>
+      <p>
+        With a team of dedicated AI experts, data scientists, and software engineers, we specialize in creating state-of-the-art AI-driven tools and platforms that optimize business operations, unlock valuable insights, and automate complex processes. From predictive analytics to intelligent automation, H&P NextWave enables businesses to harness the full potential of AI, transforming challenges into opportunities.
+      </p>
+    </section>
   
     <!-- Key Services & Offerings Section -->
-    <div id="services-root"></div>
+    <section class="services-section">
+      <h2>Key Services &amp; Offerings</h2>
+      <p>
+        H&P NextWave provides a comprehensive suite of AI-powered solutions tailored to meet the diverse needs of businesses across various industries. Our services include:
+      </p>
+      <ol>
+        <li>
+          <strong>AI-Powered Data Analytics</strong>
+          <ul>
+            <li><em>Predictive Analytics:</em> Anticipate trends, customer behavior, and market fluctuations to make data-driven decisions.</li>
+            <li><em>Big Data Processing:</em> Handle massive datasets with ease, extracting actionable insights from structured and unstructured data.</li>
+            <li><em>Real-Time Data Analysis:</em> Monitor and analyze live data streams to improve operations and responsiveness.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Intelligent Process Automation (IPA)</strong>
+          <ul>
+            <li><em>Robotic Process Automation (RPA):</em> Automate repetitive tasks, freeing up valuable human resources for higher-level work.</li>
+            <li><em>Workflow Optimization:</em> Improve operational efficiency by streamlining and automating key business processes.</li>
+            <li><em>AI-Powered Chatbots:</em> Enhance customer service and engagement with AI-driven virtual assistants.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Industry-Specific AI Solutions</strong>
+          <p>
+            We provide industry-focused AI innovations designed to solve unique challenges across various sectors:
+          </p>
+          <ul>
+            <li>Marketing &amp; Customer Engagement: AI-driven ad targeting, chatbots, and customer sentiment analysis.</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
   
     <!-- Team Section -->
-    <div id="team-root"></div>
+    <section class="team-section">
+      <h2>Meet Our Team</h2>
+      <div class="team-member">
+        <img src="./assets/WillHatfieldPhoto.png" alt="Team Member 1">
+        <h3>William Hatfield</h3>
+        <p>Founder &amp; CEO</p>
+      </div>
+      <div class="team-member">
+        <img src="./assets/BlakePalm2.png" alt="Team Member 2">
+        <h3>Blake Palm</h3>
+        <p>Head of Business Operations</p>
+      </div>
+      <div class="team-member">
+        <img src="./assets/team-member3.jpg" alt="Team Member 3">
+        <h3>Robert Alexander</h3>
+        <p>Intern</p>
+      </div>
+    </section>
   </main>
   
   <!-- Footer -->
-  <div id="footer-root"></div>
+  <footer>
+    <p>&copy; 2025 H&P NextWave. All Rights Reserved.</p>
+    <p>Contact us: <a href="mailto:hpnextwave@gmail.com">hpnextwave@gmail.com</a></p>
+    <p>Follow us on:
+      <a href="https://twitter.com/hpnextwave" target="_blank">Twitter</a> |
+      <a href="https://linkedin.com/company/hpnextwave" target="_blank">LinkedIn</a>
+    </p>
+    <p><a href="privacy.html">Privacy Policy</a></p>
+  </footer>
   
-  <script type="text/babel">
-    // Header Component
-    function Header() {
-      return (
-        <header>
-          <div className="brand">H&P NextWave</div>
-          <nav>
-            <a href="homepage.html">Home</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="contact.html">Contact</a>
-          </nav>
-        </header>
-      );
-    }
-
-    // Hero Component
-    function Hero() {
-      return (
-        <section className="hero">
-          <h1>Empowering AI Innovations</h1>
-          <p>
-            Transforming businesses with cutting-edge technology, 
-            data-driven insights, and the limitless potential of artificial intelligence.
-          </p>
-        </section>
-      );
-    }
-
-    // About Component
-    function About() {
-      return (
-        <section className="about-section">
-          <h2>About H&P NextWave</h2>
-          <p>
-            H&P NextWave is a pioneering technology company at the forefront of artificial intelligence, data analytics, and machine learning innovation. Our mission is to empower businesses of all sizes by providing scalable, user-friendly, and cost-effective AI solutions that drive efficiency, enhance decision-making, and fuel growth.
-          </p>
-          <p>
-            With a team of dedicated AI experts, data scientists, and software engineers, we specialize in creating state-of-the-art AI-driven tools and platforms that optimize business operations, unlock valuable insights, and automate complex processes. From predictive analytics to intelligent automation, H&P NextWave enables businesses to harness the full potential of AI, transforming challenges into opportunities.
-          </p>
-        </section>
-      );
-    }
-
-    // Services Component
-    function Services() {
-      return (
-        <section className="services-section">
-          <h2>Key Services &amp; Offerings</h2>
-          <p>
-            H&P NextWave provides a comprehensive suite of AI-powered solutions tailored to meet the diverse needs of businesses across various industries. Our services include:
-          </p>
-          <ol>
-            <li>
-              <strong>AI-Powered Data Analytics</strong>
-              <ul>
-                <li><em>Predictive Analytics:</em> Anticipate trends, customer behavior, and market fluctuations to make data-driven decisions.</li>
-                <li><em>Big Data Processing:</em> Handle massive datasets with ease, extracting actionable insights from structured and unstructured data.</li>
-                <li><em>Real-Time Data Analysis:</em> Monitor and analyze live data streams to improve operations and responsiveness.</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Intelligent Process Automation (IPA)</strong>
-              <ul>
-                <li><em>Robotic Process Automation (RPA):</em> Automate repetitive tasks, freeing up valuable human resources for higher-level work.</li>
-                <li><em>Workflow Optimization:</em> Improve operational efficiency by streamlining and automating key business processes.</li>
-                <li><em>AI-Powered Chatbots:</em> Enhance customer service and engagement with AI-driven virtual assistants.</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Industry-Specific AI Solutions</strong>
-              <p>
-                We provide industry-focused AI innovations designed to solve unique challenges across various sectors:
-              </p>
-              <ul>
-                <li>Marketing &amp; Customer Engagement: AI-driven ad targeting, chatbots, and customer sentiment analysis.</li>
-              </ul>
-            </li>
-          </ol>
-        </section>
-      );
-    }
-
-    // Team Component
-    function Team() {
-      const teamMembers = [
-        {
-          name: "William Hatfield",
-          title: "Founder & CEO",
-          image: "./assets/WillHatfieldPhoto.png"
-        },
-        {
-          name: "Blake Palm",
-          title: "Head of Business Operations",
-          image: "./assets/BlakePalm2.png"
-        },
-        {
-          name: "Robert Alexander",
-          title: "Intern",
-          image: "./assets/team-member3.jpg"
-        }
-      ];
-
-      return (
-        <section className="team-section">
-          <h2>Meet Our Team</h2>
-          {teamMembers.map((member, index) => (
-            <div key={index} className="team-member">
-              <img src={member.image} alt={member.name} />
-              <h3>{member.name}</h3>
-              <p>{member.title}</p>
-            </div>
-          ))}
-        </section>
-      );
-    }
-
-    // Footer Component
-    function Footer() {
-      return (
-        <footer>
-          <p>&copy; 2025 H&P NextWave. All Rights Reserved.</p>
-          <p>Contact us: <a href="mailto:hpnextwave@gmail.com">hpnextwave@gmail.com</a></p>
-          <p>Follow us on:
-            <a href="https://twitter.com/hpnextwave" target="_blank">Twitter</a> |
-            <a href="https://linkedin.com/company/hpnextwave" target="_blank">LinkedIn</a>
-          </p>
-          <p><a href="privacy.html">Privacy Policy</a></p>
-        </footer>
-      );
-    }
-
-    // Render components
-    ReactDOM.render(<Header />, document.getElementById('header-root'));
-    ReactDOM.render(<Hero />, document.getElementById('hero-root'));
-    ReactDOM.render(<About />, document.getElementById('about-root'));
-    ReactDOM.render(<Services />, document.getElementById('services-root'));
-    ReactDOM.render(<Team />, document.getElementById('team-root'));
-    ReactDOM.render(<Footer />, document.getElementById('footer-root'));
-
+  <script>
     // Add fade-in class to body after page load
     window.addEventListener('load', function() {
       document.body.classList.add('fade-in');

@@ -58,7 +58,7 @@ jobs:
           
           # Debug: Check critical files
           echo "Checking critical files..."
-          for file in index.html CNAME .nojekyll; do
+          for file in index.html homepage.html CNAME .nojekyll; do
             if [ -f "deploy/$file" ]; then
               echo "✓ $file exists"
             else
