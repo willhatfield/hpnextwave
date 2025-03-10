@@ -25,21 +25,36 @@ jobs:
 
       - name: Create deployment directory
         run: |
+          # Create deployment directory
           mkdir -p deploy
+          
+          # Copy all files from html directory
           cp -r html/* deploy/
+          
+          # Copy CNAME file
           cp CNAME deploy/
-          # Ensure index.html exists
-          if [ ! -f deploy/index.html ]; then
+          
+          # Ensure .nojekyll exists
+          touch deploy/.nojekyll
+          
+          # Create index.html from homepage.html if needed
+          if [ -f deploy/homepage.html ]; then
             cp deploy/homepage.html deploy/index.html
           fi
-
-      - name: Verify deployment files
-        run: |
+          
+          # Debug: List all files in deploy directory
+          echo "Contents of deploy directory:"
           ls -la deploy/
-          echo "Checking for critical files..."
-          [ -f deploy/index.html ] && echo "index.html exists" || echo "index.html missing"
-          [ -f deploy/CNAME ] && echo "CNAME exists" || echo "CNAME missing"
-          [ -f deploy/.nojekyll ] && echo ".nojekyll exists" || echo ".nojekyll missing"
+          
+          # Debug: Check critical files
+          echo "Checking critical files..."
+          for file in index.html CNAME .nojekyll; do
+            if [ -f "deploy/$file" ]; then
+              echo "✓ $file exists"
+            else
+              echo "✗ $file is missing"
+            fi
+          done
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
