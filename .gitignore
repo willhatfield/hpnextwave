@@ -9,6 +9,11 @@ dist/
 build/
 _site/
 
+# Backup and temporary directories
+react_backup/
+backup/
+temp/
+
 # IDE and editor files
 .idea/
 .vscode/

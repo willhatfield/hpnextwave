@@ -38,14 +38,20 @@ jobs:
           echo "Current directory structure:"
           ls -la
           
-          # Clean up any existing node_modules
-          echo "Cleaning up node_modules..."
+          # Clean up any existing node_modules and react_backup directories
+          echo "Cleaning up unnecessary directories..."
           find . -name "node_modules" -type d -exec rm -rf {} +
+          find . -name "react_backup" -type d -exec rm -rf {} +
           
-          # Copy all HTML files and assets from hpnextwave/html directory
+          # Copy only the necessary files from hpnextwave/html directory
           echo "Copying files from hpnextwave/html directory..."
-          cp hpnextwave/html/*.html deploy/
-          cp -r hpnextwave/html/assets deploy/
+          if [ -d "hpnextwave/html" ]; then
+            cp hpnextwave/html/*.html deploy/
+            cp -r hpnextwave/html/assets deploy/
+          else
+            echo "Error: hpnextwave/html directory not found"
+            exit 1
+          fi
           
           # Copy CNAME file if it exists
           if [ -f "CNAME" ]; then
