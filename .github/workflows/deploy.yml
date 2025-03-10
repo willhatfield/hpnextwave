@@ -10,7 +10,7 @@ permissions:
   id-token: write
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -36,28 +36,11 @@ jobs:
           touch deploy/.nojekyll
           
           # Copy only the necessary files from hpnextwave/html directory
-          echo "Copying files from hpnextwave/html directory..."
-          if [ -d "hpnextwave/html" ]; then
-            # Copy HTML files
-            cp hpnextwave/html/*.html deploy/
-            
-            # Copy assets directory if it exists
-            if [ -d "hpnextwave/html/assets" ]; then
-              cp -r hpnextwave/html/assets deploy/
-            else
-              echo "Warning: assets directory not found"
-            fi
-          else
-            echo "Error: hpnextwave/html directory not found"
-            exit 1
-          fi
+          cp -r hpnextwave/html/* deploy/
           
           # Copy CNAME file if it exists
           if [ -f "CNAME" ]; then
-            echo "Copying CNAME file..."
             cp CNAME deploy/
-          else
-            echo "Warning: CNAME file not found"
           fi
           
           # Debug: Show final directory structure
