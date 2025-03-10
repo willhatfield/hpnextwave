@@ -15,6 +15,8 @@ backup/
 temp/
 hpnextwave/react_backup/
 hpnextwave/node_modules/
+**/node_modules/
+**/react_backup/
 
 # IDE and editor files
 .idea/
@@ -28,4 +30,13 @@ Thumbs.db
 
 # Documentation and other files
 *.md
-!README.md 
+!README.md
+
+# TypeScript and React files
+*.ts
+*.tsx
+*.jsx
+tsconfig.json
+package.json
+package-lock.json
+yarn.lock 

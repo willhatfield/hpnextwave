@@ -28,7 +28,8 @@ jobs:
 
       - name: Create deployment directory
         run: |
-          # Create deployment directory
+          # Create a clean deployment directory
+          rm -rf deploy
           mkdir -p deploy
           
           # Create .nojekyll file first to prevent Jekyll processing
@@ -90,6 +91,14 @@ jobs:
           # Debug: Show final directory structure
           echo "Final directory structure:"
           find deploy -type f
+          
+          # Debug: Check for any .md files
+          echo "Checking for .md files:"
+          find deploy -name "*.md" -type f
+          
+          # Debug: Check for any node_modules
+          echo "Checking for node_modules:"
+          find deploy -name "node_modules" -type d
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
