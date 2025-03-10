@@ -21,11 +21,11 @@
     
     /* Global Typography & Body Settings */
     body {
-      background-color: #f4f4f9; /* Light grey background */
-      color: #333; /* Dark grey text */
+      background-color: #121212;
+      color: #ffffff;
       font-family: 'Playfair Display', serif;
       line-height: 1.6;
-      opacity: 0; /* Start hidden for fade-in effect */
+      opacity: 0;
       transition: opacity 0.4s ease-in-out;
     }
     body.fade-in {
@@ -34,206 +34,205 @@
     
     /* Header & Navigation */
     header {
-      background-color: #1a1a1a;  /* Dark grey header bar */
+      background-color: #1a1a1a;
       color: #fff;
-      padding: 10px 20px;
+      padding: 15px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       position: sticky;
       top: 0;
       z-index: 1000;
+      border-bottom: 1px solid #333;
     }
     .brand {
-      font-family: 'Cinzel', serif;
-      font-size: 1.5rem;
+      font-family: 'Bodoni Moda', serif;
+      font-size: 1.8rem;
       font-weight: 700;
+      color: #ff4444;
     }
     nav a {
       color: #fff;
       text-decoration: none;
-      margin: 0 10px;
+      margin: 0 15px;
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 1rem;
       transition: color 0.2s ease;
+      padding: 8px 15px;
+      border-radius: 4px;
     }
     nav a:hover {
-      color: #888;
-    }
-    
-    /* Hero Section */
-    .hero {
-      background-image: url('assets/32993994_840843081452.png');
-      background-size: cover;
-      background-position: center;
-      min-height: 60vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #fff;
-      padding: 100px 20px;
-    }
-    .hero h1 {
-      font-family: 'Cinzel', serif;
-      font-size: 3rem;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto;
+      color: #ff4444;
+      background-color: rgba(255, 68, 68, 0.1);
     }
     
     /* Main Content */
     main {
       width: 90%;
       max-width: 1200px;
-      margin: 0 auto 40px;
+      margin: 40px auto;
+      padding: 40px 0;
     }
-    .pricing-section {
-      margin-top: 40px;
-      line-height: 1.8;
+    
+    /* Section Styling */
+    section {
+      background-color: #1a1a1a;
+      border-radius: 8px;
+      padding: 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    section h1 {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 2.5rem;
+      margin-bottom: 25px;
+      color: #ff4444;
       text-align: center;
     }
-    .pricing-section h2 {
-      font-family: 'Cinzel', serif;
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-    .pricing-plans {
+    
+    /* Pricing Cards */
+    .pricing-container {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 40px;
     }
-    .pricing-plan {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 20px;
-      margin: 20px;
+    
+    .pricing-card {
+      background-color: #242424;
+      border-radius: 8px;
+      padding: 30px;
       width: 300px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
       transition: transform 0.3s ease;
     }
-    .pricing-plan:hover {
-      transform: translateY(-10px);
+    
+    .pricing-card:hover {
+      transform: translateY(-5px);
     }
-    .pricing-plan h3 {
-      font-family: 'Cinzel', serif;
-      font-size: 1.5rem;
-      margin-bottom: 10px;
+    
+    .pricing-card h2 {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 1.8rem;
+      color: #ff4444;
+      margin-bottom: 15px;
     }
-    .pricing-plan p {
+    
+    .price {
+      font-size: 2.5rem;
+      color: #ffffff;
+      margin: 20px 0;
+      font-family: 'Bodoni Moda', serif;
+    }
+    
+    .features {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+      color: #e0e0e0;
+    }
+    
+    .features li {
+      margin: 10px 0;
       font-size: 1.1rem;
-      margin-bottom: 10px;
     }
-    .pricing-plan ul {
-      margin-left: 20px;
-      list-style-type: disc;
-      text-align: left;
-    }
-    .pricing-plan li {
-      margin-bottom: 0.5em;
-    }
-    .pricing-plan button {
-      background-color: #1a1a1a;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
+    
+    .cta-button {
+      display: inline-block;
+      background-color: #ff4444;
+      color: #ffffff;
+      padding: 12px 30px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 20px;
       transition: background-color 0.2s ease;
     }
-    .pricing-plan button:hover {
-      background-color: #333;
+    
+    .cta-button:hover {
+      background-color: #ff6666;
     }
     
     /* Footer */
     footer {
-      background-color: #1a1a1a; /* Dark grey footer */
-      color: #ccc;
-      padding: 30px 20px;
+      background-color: #1a1a1a;
+      color: #e0e0e0;
+      padding: 40px 20px;
       font-size: 0.9rem;
       text-align: center;
+      border-top: 1px solid #333;
     }
     footer a {
-      color: #ccc;
+      color: #ff4444;
       text-decoration: none;
+      transition: color 0.2s ease;
     }
     footer a:hover {
-      text-decoration: underline;
+      color: #ff6666;
     }
     footer p {
       max-width: 1200px;
-      margin: 0 auto;
+      margin: 10px auto;
     }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
-    <div class="brand">H&P NextWave</div>
+    <div class="brand">
+      H&P NextWave
+    </div>
     <nav>
       <a href="homepage.html">Home</a>
       <a href="pricing.html">Pricing</a>
       <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy</a>
     </nav>
   </header>
   
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Our Pricing</h1>
-    <p>Choose the plan that suits your business needs and scale with AI-driven innovation.</p>
-  </section>
-  
   <!-- Main Content -->
   <main>
-    <section class="pricing-section">
-      <h2>Pricing Plans</h2>
-      <div class="pricing-plans">
-        <div class="pricing-plan">
-          <h3>Basic Plan</h3>
-          <p>$99/month</p>
-          <ul>
-            <li>AI-powered analytics</li>
-            <li>Basic reporting dashboard</li>
-            <li>Up to 5 user accounts</li>
-            <li>Email support</li>
-            <li>Basic API access</li>
+    <section>
+      <h1>Flexible Pricing for Your AI Needs</h1>
+      <div class="pricing-container">
+        <div class="pricing-card">
+          <h2>Starter</h2>
+          <div class="price">$2,999/mo</div>
+          <ul class="features">
+            <li>Custom AI Model Development</li>
+            <li>Basic Data Processing</li>
+            <li>8/5 Support</li>
+            <li>Monthly Performance Reports</li>
+            <li>Up to 100k API Calls/month</li>
           </ul>
-          <button onclick="window.location.href='contact.html'">Get Started</button>
+          <a href="contact.html" class="cta-button">Get Started</a>
         </div>
-        <div class="pricing-plan">
-          <h3>Standard Plan</h3>
-          <p>$199/month</p>
-          <ul>
-            <li>Advanced AI predictions</li>
-            <li>Customizable dashboards</li>
-            <li>Up to 20 user accounts</li>
-            <li>Priority email support</li>
-            <li>Full API access</li>
-            <li>Custom integrations</li>
+        
+        <div class="pricing-card">
+          <h2>Professional</h2>
+          <div class="price">$5,999/mo</div>
+          <ul class="features">
+            <li>Advanced AI Model Development</li>
+            <li>Premium Data Processing</li>
+            <li>24/7 Priority Support</li>
+            <li>Weekly Performance Reports</li>
+            <li>Up to 500k API Calls/month</li>
           </ul>
-          <button onclick="window.location.href='contact.html'">Get Started</button>
+          <a href="contact.html" class="cta-button">Get Started</a>
         </div>
-        <div class="pricing-plan">
-          <h3>Premium Plan</h3>
-          <p>$499/month</p>
-          <ul>
-            <li>Full AI automation suite</li>
-            <li>Priority support & consulting</li>
-            <li>Unlimited user accounts</li>
-            <li>24/7 phone support</li>
-            <li>Advanced API features</li>
-            <li>Custom development</li>
-            <li>Dedicated account manager</li>
+        
+        <div class="pricing-card">
+          <h2>Enterprise</h2>
+          <div class="price">Custom</div>
+          <ul class="features">
+            <li>Full-Scale AI Solutions</li>
+            <li>Unlimited Data Processing</li>
+            <li>24/7 Dedicated Support</li>
+            <li>Real-Time Analytics</li>
+            <li>Unlimited API Calls</li>
           </ul>
-          <button onclick="window.location.href='contact.html'">Get Started</button>
+          <a href="contact.html" class="cta-button">Contact Us</a>
         </div>
       </div>
     </section>
@@ -241,14 +240,18 @@
   
   <!-- Footer -->
   <footer>
-    <p>&copy; 2024 H&P NextWave. All rights reserved.</p>
-    <p>Contact us: <a href="mailto:contact@hpnextwave.com">contact@hpnextwave.com</a></p>
+    <p>&copy; 2025 H&P NextWave. All Rights Reserved.</p>
+    <p>Contact us: <a href="mailto:hpnextwave@gmail.com">hpnextwave@gmail.com</a></p>
+    <p>Follow us on:
+      <a href="https://twitter.com/hpnextwave" target="_blank">Twitter</a> |
+      <a href="https://linkedin.com/company/hpnextwave" target="_blank">LinkedIn</a>
+    </p>
     <p><a href="privacy.html">Privacy Policy</a></p>
   </footer>
   
   <script>
-    // Add fade-in effect on page load
-    document.addEventListener('DOMContentLoaded', function() {
+    // Add fade-in class to body after page load
+    window.addEventListener('load', function() {
       document.body.classList.add('fade-in');
     });
   </script>
