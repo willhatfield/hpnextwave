@@ -31,6 +31,9 @@ jobs:
           # Create deployment directory
           mkdir -p deploy
           
+          # Create .nojekyll file first to prevent Jekyll processing
+          touch deploy/.nojekyll
+          
           # Debug: Show current directory structure
           echo "Current directory structure:"
           ls -la
@@ -47,10 +50,6 @@ jobs:
           else
             echo "Warning: CNAME file not found"
           fi
-          
-          # Create .nojekyll file
-          echo "Creating .nojekyll file..."
-          touch deploy/.nojekyll
           
           # Debug: List all files in deploy directory
           echo "Contents of deploy directory:"
