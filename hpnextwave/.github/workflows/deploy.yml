@@ -34,13 +34,11 @@ jobs:
           # Copy CNAME file
           cp CNAME deploy/
           
-          # Ensure .nojekyll exists
+          # Create .nojekyll file
           touch deploy/.nojekyll
           
-          # Create index.html from homepage.html if needed
-          if [ -f deploy/homepage.html ]; then
-            cp deploy/homepage.html deploy/index.html
-          fi
+          # Create index.html from homepage.html
+          cp deploy/homepage.html deploy/index.html
           
           # Debug: List all files in deploy directory
           echo "Contents of deploy directory:"
