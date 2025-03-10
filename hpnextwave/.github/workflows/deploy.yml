@@ -22,10 +22,6 @@ jobs:
         with:
           submodules: false
           fetch-depth: 1
-          sparse-checkout: |
-            html/
-            CNAME
-            .nojekyll
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
