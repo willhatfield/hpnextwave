@@ -35,8 +35,11 @@ jobs:
           # Create .nojekyll file first to prevent Jekyll processing
           touch deploy/.nojekyll
           
-          # Copy only the necessary files from hpnextwave/html directory
-          cp -r hpnextwave/html/* deploy/
+          # Copy HTML files
+          cp hpnextwave/html/*.html deploy/
+          
+          # Copy assets directory
+          cp -r hpnextwave/html/assets deploy/
           
           # Copy CNAME file if it exists
           if [ -f "CNAME" ]; then
