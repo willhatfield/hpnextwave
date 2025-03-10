@@ -28,16 +28,28 @@ jobs:
           # Create deployment directory
           mkdir -p deploy
           
+          # Debug: Show current directory structure
+          echo "Current directory structure:"
+          ls -la
+          
           # Copy all files from html directory
+          echo "Copying files from html directory..."
           cp -r html/* deploy/
           
-          # Copy CNAME file
-          cp CNAME deploy/
+          # Copy CNAME file if it exists
+          if [ -f "CNAME" ]; then
+            echo "Copying CNAME file..."
+            cp CNAME deploy/
+          else
+            echo "Warning: CNAME file not found"
+          fi
           
           # Create .nojekyll file
+          echo "Creating .nojekyll file..."
           touch deploy/.nojekyll
           
           # Create index.html that redirects to homepage.html
+          echo "Creating index.html..."
           cat > deploy/index.html << 'EOL'
           <!DOCTYPE html>
           <html lang="en">
@@ -58,13 +70,18 @@ jobs:
           
           # Debug: Check critical files
           echo "Checking critical files..."
-          for file in index.html homepage.html CNAME .nojekyll; do
+          for file in index.html homepage.html .nojekyll; do
             if [ -f "deploy/$file" ]; then
               echo "✓ $file exists"
             else
               echo "✗ $file is missing"
+              exit 1
             fi
           done
+          
+          # Debug: Check file permissions
+          echo "Checking file permissions..."
+          ls -la deploy/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
